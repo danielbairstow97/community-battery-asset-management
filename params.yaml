@@ -1,0 +1,10 @@
+locations:
+  Brisbane:
+    latitude: -27.4705
+    longitude: 153.0260
+  Mt Isa:
+    latitude: -20.7264
+    longitude: 139.4930
+  Cairns:
+    latitude: 16.9203
+    longitude: 145.7710

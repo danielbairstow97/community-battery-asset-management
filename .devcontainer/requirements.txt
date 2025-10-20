@@ -1,0 +1,5 @@
+polars==1.33.1
+pandas==2.3.2
+pyarrow==21.0.0
+ipykernel==6.29.5
+dss-python==0.15.7

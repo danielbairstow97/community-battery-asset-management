@@ -1,0 +1,19 @@
+stages:
+  get_tmy:
+    cmd: python stages/get_tmy.py
+      --location ${item.location}
+      --output data/tmy/${item.location}.csv
+    deps:
+      - stages/get_tmy.py
+    matrix:
+      location: [Brisbane]
+    outs:
+      - data/tmy/${item.location}.csv
+  get_dispatch_data:
+    cmd: python stages/get_dispatch_data.py
+      --output data/dispatch
+    deps:
+      - stages/get_dispatch_data.py
+    outs:
+      - data/dispatch/dispatch.csv
+

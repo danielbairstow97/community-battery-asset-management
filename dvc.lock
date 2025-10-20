@@ -1,0 +1,27 @@
+schema: '2.0'
+stages:
+  get_tmy@Brisbane:
+    cmd: python stages/get_tmy.py --location Brisbane --output 
+      data/tmy/Brisbane.csv
+    deps:
+    - path: stages/get_tmy.py
+      hash: md5
+      md5: a024d41a9fef60bba633abea5a809acb
+      size: 1200
+    outs:
+    - path: data/tmy/Brisbane.csv
+      hash: md5
+      md5: 93e557109012f5542c46daf06b2732fd
+      size: 370770
+  get_dispatch_data:
+    cmd: python stages/get_dispatch_data.py --output data/dispatch
+    deps:
+    - path: stages/get_dispatch_data.py
+      hash: md5
+      md5: 6b9ed55a1352df3d73e2aef10a80c222
+      size: 739
+    outs:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: 555806ea1b670b058baeddbc10fa4e74
+      size: 8930259

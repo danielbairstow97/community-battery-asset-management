@@ -1,0 +1,38 @@
+{
+	"name": "devcontainr_python3",
+	"service": "jupyter",
+	"dockerComposeFile": "docker-compose.yaml",
+	"workspaceFolder": "/workspace",
+	"shutdownAction": "stopCompose",
+	"forwardPorts": [
+		8888
+	],
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {
+			"installDirectlyFromGitHubRelease": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+			"installDirectlyFromGitHubRelease": true,
+			"version": "latest"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-toolsai.jupyter"
+			],
+			"settings": {
+				"python.defaultInterpreterPath": "/usr/local/bin/python3",
+				"workbench.colorCustomizations": {
+					"titleBar.activeBackground": "#19549C",
+					"titleBar.activeForeground": "#ffffff",
+					"activityBar.background": "#02A7E3",
+					"activityBar.foreground": "#ffffff"
+				}
+			}
+		}
+	}
+}
