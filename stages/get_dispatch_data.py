@@ -10,8 +10,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", required=True)
 
-    start_time = '2024/01/01 00:00:00'
-    end_time = '2025/01/01 00:00:00'
+    start_time = '2023/12/31 23:59:00'
+    end_time = '2024/12/31 23:56:00'
     table = 'DISPATCHPRICE'
 
     args = parser.parse_args()

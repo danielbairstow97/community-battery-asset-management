@@ -6,22 +6,4170 @@ stages:
     deps:
     - path: stages/get_tmy.py
       hash: md5
-      md5: a024d41a9fef60bba633abea5a809acb
-      size: 1200
+      md5: 003095b96487e13f94955bde3a41a9f5
+      size: 840
     outs:
     - path: data/tmy/Brisbane.csv
       hash: md5
-      md5: 93e557109012f5542c46daf06b2732fd
-      size: 370770
+      md5: 4f390dda6de6f0e3628d3abad4d74e02
+      size: 328080
   get_dispatch_data:
     cmd: python stages/get_dispatch_data.py --output data/dispatch
     deps:
     - path: stages/get_dispatch_data.py
       hash: md5
-      md5: 6b9ed55a1352df3d73e2aef10a80c222
+      md5: 653c9db115e44a0771e0d050a74cf1f1
       size: 739
     outs:
     - path: data/dispatch/dispatch.csv
       hash: md5
-      md5: 555806ea1b670b058baeddbc10fa4e74
-      size: 8930259
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+  optimise@Brisbane-0.1-0.8:
+    cmd: python stages/optimise.py --tmy data/tmy/Brisbane.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.1 --max-soc 0.8 --output 
+      results/schedule/Brisbane_min_soc=0.1_max_soc=0.8.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Brisbane.csv
+      hash: md5
+      md5: 4f390dda6de6f0e3628d3abad4d74e02
+      size: 328080
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Brisbane_min_soc=0.1_max_soc=0.8.csv
+      hash: md5
+      md5: b45cd411deb00b41f09123f6ce297ff0
+      size: 11210640
+  optimise@Brisbane-0-0.6:
+    cmd: python stages/optimise.py --tmy data/tmy/Brisbane.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0 --max-soc 0.6 --output 
+      results/schedule/Brisbane_min_soc=0_max_soc=0.6.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Brisbane.csv
+      hash: md5
+      md5: 4f390dda6de6f0e3628d3abad4d74e02
+      size: 328080
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Brisbane_min_soc=0_max_soc=0.6.csv
+      hash: md5
+      md5: c5de7a5b99f0b0c8aac2b7681b97c2c5
+      size: 11390286
+  optimise@Brisbane-0-0.8:
+    cmd: python stages/optimise.py --tmy data/tmy/Brisbane.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0 --max-soc 0.8 --output 
+      results/schedule/Brisbane_min_soc=0_max_soc=0.8.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Brisbane.csv
+      hash: md5
+      md5: 4f390dda6de6f0e3628d3abad4d74e02
+      size: 328080
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Brisbane_min_soc=0_max_soc=0.8.csv
+      hash: md5
+      md5: eafc9cb64b98ab37b6e7d5250f3b5dd5
+      size: 11078531
+  optimise@Brisbane-0-0.9:
+    cmd: python stages/optimise.py --tmy data/tmy/Brisbane.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0 --max-soc 0.9 --output 
+      results/schedule/Brisbane_min_soc=0_max_soc=0.9.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Brisbane.csv
+      hash: md5
+      md5: 4f390dda6de6f0e3628d3abad4d74e02
+      size: 328080
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Brisbane_min_soc=0_max_soc=0.9.csv
+      hash: md5
+      md5: 51a1fed694b0c59f44ce99556acd58cf
+      size: 10900371
+  optimise@Brisbane-0-1:
+    cmd: python stages/optimise.py --tmy data/tmy/Brisbane.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0 --max-soc 1 --output 
+      results/schedule/Brisbane_min_soc=0_max_soc=1.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Brisbane.csv
+      hash: md5
+      md5: 4f390dda6de6f0e3628d3abad4d74e02
+      size: 328080
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Brisbane_min_soc=0_max_soc=1.csv
+      hash: md5
+      md5: 913b0b18894fa451ca0df094ea5fac5a
+      size: 10740276
+  optimise@Brisbane-0.1-0.6:
+    cmd: python stages/optimise.py --tmy data/tmy/Brisbane.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.1 --max-soc 0.6 --output 
+      results/schedule/Brisbane_min_soc=0.1_max_soc=0.6.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Brisbane.csv
+      hash: md5
+      md5: 4f390dda6de6f0e3628d3abad4d74e02
+      size: 328080
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Brisbane_min_soc=0.1_max_soc=0.6.csv
+      hash: md5
+      md5: 472f4eab9a95f443b7a601f6b4f98125
+      size: 11478032
+  optimise@Brisbane-0.1-0.9:
+    cmd: python stages/optimise.py --tmy data/tmy/Brisbane.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.1 --max-soc 0.9 --output 
+      results/schedule/Brisbane_min_soc=0.1_max_soc=0.9.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Brisbane.csv
+      hash: md5
+      md5: 4f390dda6de6f0e3628d3abad4d74e02
+      size: 328080
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Brisbane_min_soc=0.1_max_soc=0.9.csv
+      hash: md5
+      md5: 938497c8b96ed0cd1156853b4aef29e4
+      size: 11036808
+  optimise@Brisbane-0.1-1:
+    cmd: python stages/optimise.py --tmy data/tmy/Brisbane.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.1 --max-soc 1 --output 
+      results/schedule/Brisbane_min_soc=0.1_max_soc=1.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Brisbane.csv
+      hash: md5
+      md5: 4f390dda6de6f0e3628d3abad4d74e02
+      size: 328080
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Brisbane_min_soc=0.1_max_soc=1.csv
+      hash: md5
+      md5: 4508c2dd93042f9b1968e499df7bdc49
+      size: 10870140
+  optimise@Brisbane-0.2-0.6:
+    cmd: python stages/optimise.py --tmy data/tmy/Brisbane.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.2 --max-soc 0.6 --output 
+      results/schedule/Brisbane_min_soc=0.2_max_soc=0.6.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Brisbane.csv
+      hash: md5
+      md5: 4f390dda6de6f0e3628d3abad4d74e02
+      size: 328080
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Brisbane_min_soc=0.2_max_soc=0.6.csv
+      hash: md5
+      md5: 9659b452b532bd07e7d9cb4127848618
+      size: 11469474
+  optimise@Brisbane-0.2-0.8:
+    cmd: python stages/optimise.py --tmy data/tmy/Brisbane.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.2 --max-soc 0.8 --output 
+      results/schedule/Brisbane_min_soc=0.2_max_soc=0.8.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Brisbane.csv
+      hash: md5
+      md5: 4f390dda6de6f0e3628d3abad4d74e02
+      size: 328080
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Brisbane_min_soc=0.2_max_soc=0.8.csv
+      hash: md5
+      md5: 7f3979d357b0e951a9fdc299165bfb6e
+      size: 11352300
+  optimise@Brisbane-0.2-0.9:
+    cmd: python stages/optimise.py --tmy data/tmy/Brisbane.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.2 --max-soc 0.9 --output 
+      results/schedule/Brisbane_min_soc=0.2_max_soc=0.9.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Brisbane.csv
+      hash: md5
+      md5: 4f390dda6de6f0e3628d3abad4d74e02
+      size: 328080
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Brisbane_min_soc=0.2_max_soc=0.9.csv
+      hash: md5
+      md5: a13661f05efaddc9c5588e0ccb8e8cca
+      size: 11185385
+  optimise@Brisbane-0.2-1:
+    cmd: python stages/optimise.py --tmy data/tmy/Brisbane.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.2 --max-soc 1 --output 
+      results/schedule/Brisbane_min_soc=0.2_max_soc=1.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Brisbane.csv
+      hash: md5
+      md5: 4f390dda6de6f0e3628d3abad4d74e02
+      size: 328080
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Brisbane_min_soc=0.2_max_soc=1.csv
+      hash: md5
+      md5: eaecd65877a26a227e1ff5a39d22fd7b
+      size: 11035304
+  optimise@Brisbane-0.4-0.6:
+    cmd: python stages/optimise.py --tmy data/tmy/Brisbane.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.4 --max-soc 0.6 --output 
+      results/schedule/Brisbane_min_soc=0.4_max_soc=0.6.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Brisbane.csv
+      hash: md5
+      md5: 4f390dda6de6f0e3628d3abad4d74e02
+      size: 328080
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Brisbane_min_soc=0.4_max_soc=0.6.csv
+      hash: md5
+      md5: 92828e75359eaa5bbd72992ba070b816
+      size: 11503857
+  optimise@Brisbane-0.4-0.8:
+    cmd: python stages/optimise.py --tmy data/tmy/Brisbane.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.4 --max-soc 0.8 --output 
+      results/schedule/Brisbane_min_soc=0.4_max_soc=0.8.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Brisbane.csv
+      hash: md5
+      md5: 4f390dda6de6f0e3628d3abad4d74e02
+      size: 328080
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Brisbane_min_soc=0.4_max_soc=0.8.csv
+      hash: md5
+      md5: a362b51923340757b922727d4b29efe6
+      size: 11476153
+  optimise@Brisbane-0.4-0.9:
+    cmd: python stages/optimise.py --tmy data/tmy/Brisbane.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.4 --max-soc 0.9 --output 
+      results/schedule/Brisbane_min_soc=0.4_max_soc=0.9.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Brisbane.csv
+      hash: md5
+      md5: 4f390dda6de6f0e3628d3abad4d74e02
+      size: 328080
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Brisbane_min_soc=0.4_max_soc=0.9.csv
+      hash: md5
+      md5: fa7a49241e8966db733fbf4ce1c7c3f8
+      size: 11468659
+  optimise@Brisbane-0.4-1:
+    cmd: python stages/optimise.py --tmy data/tmy/Brisbane.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.4 --max-soc 1 --output 
+      results/schedule/Brisbane_min_soc=0.4_max_soc=1.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Brisbane.csv
+      hash: md5
+      md5: 4f390dda6de6f0e3628d3abad4d74e02
+      size: 328080
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Brisbane_min_soc=0.4_max_soc=1.csv
+      hash: md5
+      md5: 25c8a9c740421423c12ec5edad817de6
+      size: 11348684
+  get_tmy@Mt_Isa:
+    cmd: python stages/get_tmy.py --location Mt_Isa --output data/tmy/Mt_Isa.csv
+    deps:
+    - path: stages/get_tmy.py
+      hash: md5
+      md5: 003095b96487e13f94955bde3a41a9f5
+      size: 840
+    outs:
+    - path: data/tmy/Mt_Isa.csv
+      hash: md5
+      md5: 7b29780627ec7b89e7a2205603fcf7e0
+      size: 327171
+  get_tmy@Cairns:
+    cmd: python stages/get_tmy.py --location Cairns --output data/tmy/Cairns.csv
+    deps:
+    - path: stages/get_tmy.py
+      hash: md5
+      md5: 003095b96487e13f94955bde3a41a9f5
+      size: 840
+    outs:
+    - path: data/tmy/Cairns.csv
+      hash: md5
+      md5: d9b698635647055368f889d5e1380c70
+      size: 326931
+  optimise@Mt_Isa-0-0.6:
+    cmd: python stages/optimise.py --tmy data/tmy/Mt_Isa.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0 --max-soc 0.6 --output 
+      results/schedule/Mt_Isa_min_soc=0_max_soc=0.6.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Mt_Isa.csv
+      hash: md5
+      md5: 7b29780627ec7b89e7a2205603fcf7e0
+      size: 327171
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Mt_Isa_min_soc=0_max_soc=0.6.csv
+      hash: md5
+      md5: 971e3954a4e290b52861292bb5b9f985
+      size: 11391059
+  optimise@Mt_Isa-0-0.8:
+    cmd: python stages/optimise.py --tmy data/tmy/Mt_Isa.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0 --max-soc 0.8 --output 
+      results/schedule/Mt_Isa_min_soc=0_max_soc=0.8.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Mt_Isa.csv
+      hash: md5
+      md5: 7b29780627ec7b89e7a2205603fcf7e0
+      size: 327171
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Mt_Isa_min_soc=0_max_soc=0.8.csv
+      hash: md5
+      md5: 00631be3a9ab79dcb411c89011b8a862
+      size: 11079304
+  optimise@Mt_Isa-0-0.9:
+    cmd: python stages/optimise.py --tmy data/tmy/Mt_Isa.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0 --max-soc 0.9 --output 
+      results/schedule/Mt_Isa_min_soc=0_max_soc=0.9.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Mt_Isa.csv
+      hash: md5
+      md5: 7b29780627ec7b89e7a2205603fcf7e0
+      size: 327171
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Mt_Isa_min_soc=0_max_soc=0.9.csv
+      hash: md5
+      md5: a9627c18e5b9f3604ed50e58180f4e42
+      size: 10901144
+  optimise@Mt_Isa-0-1:
+    cmd: python stages/optimise.py --tmy data/tmy/Mt_Isa.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0 --max-soc 1 --output 
+      results/schedule/Mt_Isa_min_soc=0_max_soc=1.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Mt_Isa.csv
+      hash: md5
+      md5: 7b29780627ec7b89e7a2205603fcf7e0
+      size: 327171
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Mt_Isa_min_soc=0_max_soc=1.csv
+      hash: md5
+      md5: 8504837ccb1247943bff042aca3c88bc
+      size: 10741049
+  optimise@Mt_Isa-0.1-0.6:
+    cmd: python stages/optimise.py --tmy data/tmy/Mt_Isa.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.1 --max-soc 0.6 --output 
+      results/schedule/Mt_Isa_min_soc=0.1_max_soc=0.6.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Mt_Isa.csv
+      hash: md5
+      md5: 7b29780627ec7b89e7a2205603fcf7e0
+      size: 327171
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Mt_Isa_min_soc=0.1_max_soc=0.6.csv
+      hash: md5
+      md5: 1d1cfebafb6d5e47af63676d4861808a
+      size: 11478805
+  optimise@Mt_Isa-0.1-0.8:
+    cmd: python stages/optimise.py --tmy data/tmy/Mt_Isa.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.1 --max-soc 0.8 --output 
+      results/schedule/Mt_Isa_min_soc=0.1_max_soc=0.8.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Mt_Isa.csv
+      hash: md5
+      md5: 7b29780627ec7b89e7a2205603fcf7e0
+      size: 327171
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Mt_Isa_min_soc=0.1_max_soc=0.8.csv
+      hash: md5
+      md5: f9b20bd75cc2b232bf2757015ec731ab
+      size: 11211399
+  optimise@Mt_Isa-0.1-0.9:
+    cmd: python stages/optimise.py --tmy data/tmy/Mt_Isa.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.1 --max-soc 0.9 --output 
+      results/schedule/Mt_Isa_min_soc=0.1_max_soc=0.9.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Mt_Isa.csv
+      hash: md5
+      md5: 7b29780627ec7b89e7a2205603fcf7e0
+      size: 327171
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Mt_Isa_min_soc=0.1_max_soc=0.9.csv
+      hash: md5
+      md5: 11c56b544c663aaf03ebb1c5530a456d
+      size: 11037581
+  optimise@Mt_Isa-0.1-1:
+    cmd: python stages/optimise.py --tmy data/tmy/Mt_Isa.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.1 --max-soc 1 --output 
+      results/schedule/Mt_Isa_min_soc=0.1_max_soc=1.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Mt_Isa.csv
+      hash: md5
+      md5: 7b29780627ec7b89e7a2205603fcf7e0
+      size: 327171
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Mt_Isa_min_soc=0.1_max_soc=1.csv
+      hash: md5
+      md5: 37f463e93eaf00980b9024af3c53f3c1
+      size: 10870913
+  optimise@Mt_Isa-0.2-0.6:
+    cmd: python stages/optimise.py --tmy data/tmy/Mt_Isa.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.2 --max-soc 0.6 --output 
+      results/schedule/Mt_Isa_min_soc=0.2_max_soc=0.6.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Mt_Isa.csv
+      hash: md5
+      md5: 7b29780627ec7b89e7a2205603fcf7e0
+      size: 327171
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Mt_Isa_min_soc=0.2_max_soc=0.6.csv
+      hash: md5
+      md5: 938b411339a93201707c026f083186dd
+      size: 11470247
+  optimise@Mt_Isa-0.2-0.8:
+    cmd: python stages/optimise.py --tmy data/tmy/Mt_Isa.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.2 --max-soc 0.8 --output 
+      results/schedule/Mt_Isa_min_soc=0.2_max_soc=0.8.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Mt_Isa.csv
+      hash: md5
+      md5: 7b29780627ec7b89e7a2205603fcf7e0
+      size: 327171
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Mt_Isa_min_soc=0.2_max_soc=0.8.csv
+      hash: md5
+      md5: 5c92097d0746643071621958e1bdac04
+      size: 11353073
+  optimise@Mt_Isa-0.2-0.9:
+    cmd: python stages/optimise.py --tmy data/tmy/Mt_Isa.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.2 --max-soc 0.9 --output 
+      results/schedule/Mt_Isa_min_soc=0.2_max_soc=0.9.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Mt_Isa.csv
+      hash: md5
+      md5: 7b29780627ec7b89e7a2205603fcf7e0
+      size: 327171
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Mt_Isa_min_soc=0.2_max_soc=0.9.csv
+      hash: md5
+      md5: 1d00eab0ebcd6339e68946b469c8b5b4
+      size: 11186158
+  optimise@Mt_Isa-0.2-1:
+    cmd: python stages/optimise.py --tmy data/tmy/Mt_Isa.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.2 --max-soc 1 --output 
+      results/schedule/Mt_Isa_min_soc=0.2_max_soc=1.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Mt_Isa.csv
+      hash: md5
+      md5: 7b29780627ec7b89e7a2205603fcf7e0
+      size: 327171
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Mt_Isa_min_soc=0.2_max_soc=1.csv
+      hash: md5
+      md5: c96dd2b6aaff0e5e2ccc83d022fb9aa6
+      size: 11036077
+  optimise@Mt_Isa-0.4-0.6:
+    cmd: python stages/optimise.py --tmy data/tmy/Mt_Isa.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.4 --max-soc 0.6 --output 
+      results/schedule/Mt_Isa_min_soc=0.4_max_soc=0.6.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Mt_Isa.csv
+      hash: md5
+      md5: 7b29780627ec7b89e7a2205603fcf7e0
+      size: 327171
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Mt_Isa_min_soc=0.4_max_soc=0.6.csv
+      hash: md5
+      md5: 374699967ec9b2e1998d95a307fbec74
+      size: 11504630
+  optimise@Mt_Isa-0.4-0.8:
+    cmd: python stages/optimise.py --tmy data/tmy/Mt_Isa.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.4 --max-soc 0.8 --output 
+      results/schedule/Mt_Isa_min_soc=0.4_max_soc=0.8.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Mt_Isa.csv
+      hash: md5
+      md5: 7b29780627ec7b89e7a2205603fcf7e0
+      size: 327171
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Mt_Isa_min_soc=0.4_max_soc=0.8.csv
+      hash: md5
+      md5: ca0a7a5e8cb6aab45cb21100cd079406
+      size: 11476926
+  optimise@Mt_Isa-0.4-0.9:
+    cmd: python stages/optimise.py --tmy data/tmy/Mt_Isa.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.4 --max-soc 0.9 --output 
+      results/schedule/Mt_Isa_min_soc=0.4_max_soc=0.9.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Mt_Isa.csv
+      hash: md5
+      md5: 7b29780627ec7b89e7a2205603fcf7e0
+      size: 327171
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Mt_Isa_min_soc=0.4_max_soc=0.9.csv
+      hash: md5
+      md5: c31b6158dca0f2a084b05f7daa88f45b
+      size: 11469432
+  optimise@Mt_Isa-0.4-1:
+    cmd: python stages/optimise.py --tmy data/tmy/Mt_Isa.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.4 --max-soc 1 --output 
+      results/schedule/Mt_Isa_min_soc=0.4_max_soc=1.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Mt_Isa.csv
+      hash: md5
+      md5: 7b29780627ec7b89e7a2205603fcf7e0
+      size: 327171
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Mt_Isa_min_soc=0.4_max_soc=1.csv
+      hash: md5
+      md5: 0f9d1dd6f354ec4aa66a4c8c13f02136
+      size: 11349457
+  optimise@Cairns-0-0.6:
+    cmd: python stages/optimise.py --tmy data/tmy/Cairns.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0 --max-soc 0.6 --output 
+      results/schedule/Cairns_min_soc=0_max_soc=0.6.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Cairns.csv
+      hash: md5
+      md5: d9b698635647055368f889d5e1380c70
+      size: 326931
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Cairns_min_soc=0_max_soc=0.6.csv
+      hash: md5
+      md5: af2db6db387e9e84c4223356b9b2e56e
+      size: 11394407
+  optimise@Cairns-0-0.8:
+    cmd: python stages/optimise.py --tmy data/tmy/Cairns.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0 --max-soc 0.8 --output 
+      results/schedule/Cairns_min_soc=0_max_soc=0.8.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Cairns.csv
+      hash: md5
+      md5: d9b698635647055368f889d5e1380c70
+      size: 326931
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Cairns_min_soc=0_max_soc=0.8.csv
+      hash: md5
+      md5: dcb1fc363cb909383246f997559b9cfd
+      size: 11082652
+  optimise@Cairns-0-0.9:
+    cmd: python stages/optimise.py --tmy data/tmy/Cairns.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0 --max-soc 0.9 --output 
+      results/schedule/Cairns_min_soc=0_max_soc=0.9.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Cairns.csv
+      hash: md5
+      md5: d9b698635647055368f889d5e1380c70
+      size: 326931
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Cairns_min_soc=0_max_soc=0.9.csv
+      hash: md5
+      md5: 18499bb373675e12f3a108d2cb891296
+      size: 10904492
+  optimise@Cairns-0-1:
+    cmd: python stages/optimise.py --tmy data/tmy/Cairns.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0 --max-soc 1 --output 
+      results/schedule/Cairns_min_soc=0_max_soc=1.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Cairns.csv
+      hash: md5
+      md5: d9b698635647055368f889d5e1380c70
+      size: 326931
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Cairns_min_soc=0_max_soc=1.csv
+      hash: md5
+      md5: 6c7a8812710da49a82d48563b681827a
+      size: 10744397
+  optimise@Cairns-0.1-0.6:
+    cmd: python stages/optimise.py --tmy data/tmy/Cairns.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.1 --max-soc 0.6 --output 
+      results/schedule/Cairns_min_soc=0.1_max_soc=0.6.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Cairns.csv
+      hash: md5
+      md5: d9b698635647055368f889d5e1380c70
+      size: 326931
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Cairns_min_soc=0.1_max_soc=0.6.csv
+      hash: md5
+      md5: b6102ee903ec3a0b4221f064a9488fc7
+      size: 11482153
+  optimise@Cairns-0.1-0.8:
+    cmd: python stages/optimise.py --tmy data/tmy/Cairns.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.1 --max-soc 0.8 --output 
+      results/schedule/Cairns_min_soc=0.1_max_soc=0.8.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Cairns.csv
+      hash: md5
+      md5: d9b698635647055368f889d5e1380c70
+      size: 326931
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Cairns_min_soc=0.1_max_soc=0.8.csv
+      hash: md5
+      md5: 26ebceaec1adca07927cd009f6b8f05d
+      size: 11214747
+  optimise@Cairns-0.1-0.9:
+    cmd: python stages/optimise.py --tmy data/tmy/Cairns.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.1 --max-soc 0.9 --output 
+      results/schedule/Cairns_min_soc=0.1_max_soc=0.9.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Cairns.csv
+      hash: md5
+      md5: d9b698635647055368f889d5e1380c70
+      size: 326931
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Cairns_min_soc=0.1_max_soc=0.9.csv
+      hash: md5
+      md5: df9d07c86ab22f012427d432d34bd614
+      size: 11040929
+  optimise@Cairns-0.1-1:
+    cmd: python stages/optimise.py --tmy data/tmy/Cairns.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.1 --max-soc 1 --output 
+      results/schedule/Cairns_min_soc=0.1_max_soc=1.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Cairns.csv
+      hash: md5
+      md5: d9b698635647055368f889d5e1380c70
+      size: 326931
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Cairns_min_soc=0.1_max_soc=1.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+  optimise@Cairns-0.2-0.6:
+    cmd: python stages/optimise.py --tmy data/tmy/Cairns.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.2 --max-soc 0.6 --output 
+      results/schedule/Cairns_min_soc=0.2_max_soc=0.6.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Cairns.csv
+      hash: md5
+      md5: d9b698635647055368f889d5e1380c70
+      size: 326931
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Cairns_min_soc=0.2_max_soc=0.6.csv
+      hash: md5
+      md5: caff2df5c7f3209f4e5269f12fdcdc80
+      size: 11473595
+  optimise@Cairns-0.2-0.8:
+    cmd: python stages/optimise.py --tmy data/tmy/Cairns.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.2 --max-soc 0.8 --output 
+      results/schedule/Cairns_min_soc=0.2_max_soc=0.8.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Cairns.csv
+      hash: md5
+      md5: d9b698635647055368f889d5e1380c70
+      size: 326931
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Cairns_min_soc=0.2_max_soc=0.8.csv
+      hash: md5
+      md5: ad1a86796cce735c1e4bee9a9bc258d1
+      size: 11356421
+  optimise@Cairns-0.2-0.9:
+    cmd: python stages/optimise.py --tmy data/tmy/Cairns.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.2 --max-soc 0.9 --output 
+      results/schedule/Cairns_min_soc=0.2_max_soc=0.9.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Cairns.csv
+      hash: md5
+      md5: d9b698635647055368f889d5e1380c70
+      size: 326931
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Cairns_min_soc=0.2_max_soc=0.9.csv
+      hash: md5
+      md5: a63a5d0118a58c6a3565c8300d0b545e
+      size: 11189506
+  optimise@Cairns-0.2-1:
+    cmd: python stages/optimise.py --tmy data/tmy/Cairns.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.2 --max-soc 1 --output 
+      results/schedule/Cairns_min_soc=0.2_max_soc=1.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Cairns.csv
+      hash: md5
+      md5: d9b698635647055368f889d5e1380c70
+      size: 326931
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Cairns_min_soc=0.2_max_soc=1.csv
+      hash: md5
+      md5: b224b2f56f30e764db946f1424f06dd0
+      size: 11039425
+  optimise@Cairns-0.4-0.6:
+    cmd: python stages/optimise.py --tmy data/tmy/Cairns.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.4 --max-soc 0.6 --output 
+      results/schedule/Cairns_min_soc=0.4_max_soc=0.6.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Cairns.csv
+      hash: md5
+      md5: d9b698635647055368f889d5e1380c70
+      size: 326931
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Cairns_min_soc=0.4_max_soc=0.6.csv
+      hash: md5
+      md5: fef1b2b39a9edccdd52ed8e6c6ce6c90
+      size: 11507978
+  optimise@Cairns-0.4-0.8:
+    cmd: python stages/optimise.py --tmy data/tmy/Cairns.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.4 --max-soc 0.8 --output 
+      results/schedule/Cairns_min_soc=0.4_max_soc=0.8.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Cairns.csv
+      hash: md5
+      md5: d9b698635647055368f889d5e1380c70
+      size: 326931
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Cairns_min_soc=0.4_max_soc=0.8.csv
+      hash: md5
+      md5: 665c2af6e436ee8290b691c96069104d
+      size: 11480274
+  optimise@Cairns-0.4-0.9:
+    cmd: python stages/optimise.py --tmy data/tmy/Cairns.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.4 --max-soc 0.9 --output 
+      results/schedule/Cairns_min_soc=0.4_max_soc=0.9.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Cairns.csv
+      hash: md5
+      md5: d9b698635647055368f889d5e1380c70
+      size: 326931
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Cairns_min_soc=0.4_max_soc=0.9.csv
+      hash: md5
+      md5: 74a6d253aacd973e582994088f272992
+      size: 11472780
+  optimise@Cairns-0.4-1:
+    cmd: python stages/optimise.py --tmy data/tmy/Cairns.csv --dispatch 
+      data/dispatch/dispatch.csv --min-soc 0.4 --max-soc 1 --output 
+      results/schedule/Cairns_min_soc=0.4_max_soc=1.csv
+    deps:
+    - path: data/dispatch/dispatch.csv
+      hash: md5
+      md5: cfb98fb0619e2d3801dce9c53b0281ac
+      size: 8930257
+    - path: data/tmy/Cairns.csv
+      hash: md5
+      md5: d9b698635647055368f889d5e1380c70
+      size: 326931
+    - path: stages/optimise.py
+      hash: md5
+      md5: 216534b0fedf3753ca57ddeb73c5cc23
+      size: 6933
+    outs:
+    - path: results/schedule/Cairns_min_soc=0.4_max_soc=1.csv
+      hash: md5
+      md5: e98261b5736a9f62e01215f7ecca5add
+      size: 11352805
+  simulate@Brisbane-0-0.6-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Brisbane_min_soc=0_max_soc=0.6.csv --output 
+      results/simulation/Brisbane_min_soc=0_max_soc=0.6_cooling_disabled=true
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0_max_soc=0.6.csv
+      hash: md5
+      md5: c5de7a5b99f0b0c8aac2b7681b97c2c5
+      size: 11390286
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.6_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: 5ecf5fb6e85722907807665edd837f30
+      size: 563326
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.6_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 819431f3f7c8d93b5ac3da5e857c3eda
+      size: 299178735
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.6_cooling_disabled=true/results.csv
+      hash: md5
+      md5: c9d71caa14c9b3237c6791779b75121e
+      size: 575036
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.6_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: e400ccde79cd93b9baf2388031969e13
+      size: 246
+  simulate@Brisbane-0-0.6-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Brisbane_min_soc=0_max_soc=0.6.csv --output 
+      results/simulation/Brisbane_min_soc=0_max_soc=0.6_cooling_disabled=false
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0_max_soc=0.6.csv
+      hash: md5
+      md5: c5de7a5b99f0b0c8aac2b7681b97c2c5
+      size: 11390286
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.6_cooling_disabled=false/daily_results.csv
+      hash: md5
+      md5: 146789fdb21a0d3010343560fc8464c8
+      size: 600317
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.6_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 619eff42122645a105f21ce48d9d8b61
+      size: 303487040
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.6_cooling_disabled=false/results.csv
+      hash: md5
+      md5: c2d5e530993d664b7c50919bf36955cc
+      size: 646504
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.6_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 93dfb19927ef21d86cb9bea655512ee5
+      size: 246
+  simulate@Brisbane-0-0.8-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Brisbane_min_soc=0_max_soc=0.8.csv --output 
+      results/simulation/Brisbane_min_soc=0_max_soc=0.8_cooling_disabled=true
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0_max_soc=0.8.csv
+      hash: md5
+      md5: eafc9cb64b98ab37b6e7d5250f3b5dd5
+      size: 11078531
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.8_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: 4b066a04b921c322623bba396031686a
+      size: 374917
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.8_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 7f72f67c127b994e3a0a44ab8a0cca38
+      size: 197177420
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.8_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 8ffb3d36f9167791c27acebd1fa06dba
+      size: 487134
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.8_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: d986dcbc1841a92db6dfb0e74cfba355
+      size: 249
+  simulate@Brisbane-0-0.8-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Brisbane_min_soc=0_max_soc=0.8.csv --output 
+      results/simulation/Brisbane_min_soc=0_max_soc=0.8_cooling_disabled=false
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0_max_soc=0.8.csv
+      hash: md5
+      md5: eafc9cb64b98ab37b6e7d5250f3b5dd5
+      size: 11078531
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.8_cooling_disabled=false/daily_results.csv
+      hash: md5
+      md5: 54ae92118303b4603ed4f2db28ec9626
+      size: 412173
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.8_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 8ea467f1a1db26cde1cf6bfc3b4a6d22
+      size: 206245719
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.8_cooling_disabled=false/results.csv
+      hash: md5
+      md5: a253694a70861939a7295c7be4925fc2
+      size: 547687
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.8_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 1e7f10bb66bc8ab689580aac92a66ba6
+      size: 245
+  simulate@Brisbane-0-0.9-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Brisbane_min_soc=0_max_soc=0.9.csv --output 
+      results/simulation/Brisbane_min_soc=0_max_soc=0.9_cooling_disabled=true
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0_max_soc=0.9.csv
+      hash: md5
+      md5: 51a1fed694b0c59f44ce99556acd58cf
+      size: 10900371
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.9_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: db457b9c4231b1a8e7d191abb584ab75
+      size: 337384
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.9_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 2af4da3467cab4ce37e1b86cf6443c5c
+      size: 176006043
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.9_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 9181d325a860f01973670337aca28fe7
+      size: 460197
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.9_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 1c9156f6a04b15181cb61787b6260341
+      size: 247
+  simulate@Brisbane-0-0.9-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Brisbane_min_soc=0_max_soc=0.9.csv --output 
+      results/simulation/Brisbane_min_soc=0_max_soc=0.9_cooling_disabled=false
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0_max_soc=0.9.csv
+      hash: md5
+      md5: 51a1fed694b0c59f44ce99556acd58cf
+      size: 10900371
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.9_cooling_disabled=false/daily_results.csv
+      hash: md5
+      md5: 4a3c55bc4023977fa9089d9995126d18
+      size: 374742
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.9_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 1e3abcb19baf2a294e1a97c3d4daa4b5
+      size: 185857209
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.9_cooling_disabled=false/results.csv
+      hash: md5
+      md5: 4581f89a5fbccff23d516e56a5630de5
+      size: 516954
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=0.9_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 63d0306e5c5eab4f3479a91f7d7e868c
+      size: 247
+  simulate@Brisbane-0-1-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Brisbane_min_soc=0_max_soc=1.csv --output 
+      results/simulation/Brisbane_min_soc=0_max_soc=1_cooling_disabled=true
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0_max_soc=1.csv
+      hash: md5
+      md5: 913b0b18894fa451ca0df094ea5fac5a
+      size: 10740276
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=1_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: 5a6bd6c8b4f996a8b240612b38253c45
+      size: 299815
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=1_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: d9e3c850043a72867a3e2f06be308480
+      size: 155862065
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=1_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 038d41307ac2ee2d4a32652c0f09ea3c
+      size: 437555
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=1_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 745f85511972d3560e04588b0053c671
+      size: 246
+  simulate@Brisbane-0-1-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Brisbane_min_soc=0_max_soc=1.csv --output 
+      results/simulation/Brisbane_min_soc=0_max_soc=1_cooling_disabled=false
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0_max_soc=1.csv
+      hash: md5
+      md5: 913b0b18894fa451ca0df094ea5fac5a
+      size: 10740276
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=1_cooling_disabled=false/daily_results.csv
+      hash: md5
+      md5: 10979da1769856eeb2cfbd6ed02e868e
+      size: 337311
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=1_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 9236627fdf98740edbd9d93388f5c68b
+      size: 166572266
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=1_cooling_disabled=false/results.csv
+      hash: md5
+      md5: d2d8b39b7b58538672dac0573fdcc12c
+      size: 491316
+    - path: 
+        results/simulation/Brisbane_min_soc=0_max_soc=1_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: ab341defd1be63335a928755a7012bb5
+      size: 246
+  simulate@Brisbane-0.1-0.6-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Brisbane_min_soc=0.1_max_soc=0.6.csv --output 
+      results/simulation/Brisbane_min_soc=0.1_max_soc=0.6_cooling_disabled=true
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.1_max_soc=0.6.csv
+      hash: md5
+      md5: 472f4eab9a95f443b7a601f6b4f98125
+      size: 11478032
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.6_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: 65cba2d17499731b1f3e3b302d1681b1
+      size: 715529
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.6_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 54668adec786e872bcf84a181de78d83
+      size: 380834277
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.6_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 98fd89a6563affd6f3eb3a41a04cc452
+      size: 614417
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.6_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: c89ba017c82374595ae6822397500dbe
+      size: 250
+  simulate@Brisbane-0.1-0.6-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Brisbane_min_soc=0.1_max_soc=0.6.csv --output 
+      results/simulation/Brisbane_min_soc=0.1_max_soc=0.6_cooling_disabled=false
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.1_max_soc=0.6.csv
+      hash: md5
+      md5: 472f4eab9a95f443b7a601f6b4f98125
+      size: 11478032
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.6_cooling_disabled=false/daily_results.csv
+      hash: md5
+      md5: df82224a6699fe67d2c84fee51d9deb5
+      size: 752912
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.6_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 354b07ff3b58528df312bc69ffefb3bd
+      size: 381305431
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.6_cooling_disabled=false/results.csv
+      hash: md5
+      md5: e5f71790fd3ef13b19daec19e0143366
+      size: 681591
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.6_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 721c0891f988b9c30aa277b478b3e7f3
+      size: 249
+  simulate@Brisbane-0.1-0.8-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Brisbane_min_soc=0.1_max_soc=0.8.csv --output 
+      results/simulation/Brisbane_min_soc=0.1_max_soc=0.8_cooling_disabled=true
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.1_max_soc=0.8.csv
+      hash: md5
+      md5: b45cd411deb00b41f09123f6ce297ff0
+      size: 11210640
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.8_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: bedddc54f30f7d0f4dead1557e4ff423
+      size: 449911
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.8_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 287ff3f3bc767a5c72548707a7bb4c60
+      size: 237907249
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.8_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 8cf4f74473f9560d67cc5f9714c9f574
+      size: 520330
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.8_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: a488c78c0069597b0518fc8417eaed15
+      size: 248
+  simulate@Brisbane-0.1-0.8-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Brisbane_min_soc=0.1_max_soc=0.8.csv --output 
+      results/simulation/Brisbane_min_soc=0.1_max_soc=0.8_cooling_disabled=false
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.1_max_soc=0.8.csv
+      hash: md5
+      md5: b45cd411deb00b41f09123f6ce297ff0
+      size: 11210640
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.8_cooling_disabled=false/daily_results.csv
+      hash: md5
+      md5: c876e64bca4bc370de39238de9861306
+      size: 487583
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.8_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 59a77087aef5da4352b7eedc97fd7d01
+      size: 245194011
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.8_cooling_disabled=false/results.csv
+      hash: md5
+      md5: c35c7170d6a3b25606a0f176ea55ea05
+      size: 579054
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.8_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 3323f318849523832669b42bbc253f39
+      size: 248
+  simulate@Brisbane-0.1-0.9-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Brisbane_min_soc=0.1_max_soc=0.9.csv --output 
+      results/simulation/Brisbane_min_soc=0.1_max_soc=0.9_cooling_disabled=true
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.1_max_soc=0.9.csv
+      hash: md5
+      md5: 938497c8b96ed0cd1156853b4aef29e4
+      size: 11036808
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.9_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: 285500effd0ebd64732bd0c45debe743
+      size: 374827
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.9_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: aedec207b4054ab611d2f460a4ef4ff1
+      size: 196728345
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.9_cooling_disabled=true/results.csv
+      hash: md5
+      md5: fe9972d1cba6fc72f14f018a3eab2478
+      size: 476931
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.9_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 2b0202f039cca33970b8da0dbfabe611
+      size: 245
+  simulate@Brisbane-0.1-0.9-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Brisbane_min_soc=0.1_max_soc=0.9.csv --output 
+      results/simulation/Brisbane_min_soc=0.1_max_soc=0.9_cooling_disabled=false
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.1_max_soc=0.9.csv
+      hash: md5
+      md5: 938497c8b96ed0cd1156853b4aef29e4
+      size: 11036808
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.9_cooling_disabled=false/daily_results.csv
+      hash: md5
+      md5: 36c8ea07d4ba097f2a6e85f843b21619
+      size: 412292
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.9_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 572407d537e3b703529890464e7d1306
+      size: 205757635
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.9_cooling_disabled=false/results.csv
+      hash: md5
+      md5: b1b2c517b5f0d38f108556ed203deafa
+      size: 531102
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=0.9_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 8b09fd77d3d4c6548b553f02531f322d
+      size: 245
+  simulate@Brisbane-0.1-1-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Brisbane_min_soc=0.1_max_soc=1.csv --output 
+      results/simulation/Brisbane_min_soc=0.1_max_soc=1_cooling_disabled=true
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.1_max_soc=1.csv
+      hash: md5
+      md5: 4508c2dd93042f9b1968e499df7bdc49
+      size: 10870140
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=1_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: fa4af4aec7335ffc8de726a85f43789e
+      size: 337368
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=1_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 874ea8253b1e206c5ab318ba2abf74a1
+      size: 176175321
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=1_cooling_disabled=true/results.csv
+      hash: md5
+      md5: caeae86634c48bba8e8b5a99d414ad5b
+      size: 452446
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=1_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 8360500d5c23e9ff81589dad066e7af1
+      size: 246
+  simulate@Brisbane-0.1-1-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Brisbane_min_soc=0.1_max_soc=1.csv --output 
+      results/simulation/Brisbane_min_soc=0.1_max_soc=1_cooling_disabled=false
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.1_max_soc=1.csv
+      hash: md5
+      md5: 4508c2dd93042f9b1968e499df7bdc49
+      size: 10870140
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=1_cooling_disabled=false/daily_results.csv
+      hash: md5
+      md5: 7a7c9b3317882b6c1514a86abba9e824
+      size: 374704
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=1_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 46c6fb9b181408ac8bd094b56c5d8642
+      size: 186046628
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=1_cooling_disabled=false/results.csv
+      hash: md5
+      md5: 8df92a4a303d8f024b9ebc71fa7d86ba
+      size: 505170
+    - path: 
+        results/simulation/Brisbane_min_soc=0.1_max_soc=1_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 0845be8b6d270a75f7d7c85064a893cf
+      size: 247
+  simulate@Brisbane-0.2-0.6-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Brisbane_min_soc=0.2_max_soc=0.6.csv --output 
+      results/simulation/Brisbane_min_soc=0.2_max_soc=0.6_cooling_disabled=true
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.2_max_soc=0.6.csv
+      hash: md5
+      md5: 9659b452b532bd07e7d9cb4127848618
+      size: 11469474
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.6_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: 2fad776a769408cf94cf5a3235f37b45
+      size: 908150
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.6_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 208e922c357f649ab1667d510c0443f6
+      size: 481719051
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.6_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 166e3f11c15c1105282580d8d8697d5d
+      size: 660560
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.6_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: ccdbf965c46c042d80093a1949a55142
+      size: 251
+  simulate@Brisbane-0.2-0.6-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Brisbane_min_soc=0.2_max_soc=0.6.csv --output 
+      results/simulation/Brisbane_min_soc=0.2_max_soc=0.6_cooling_disabled=false
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.2_max_soc=0.6.csv
+      hash: md5
+      md5: 9659b452b532bd07e7d9cb4127848618
+      size: 11469474
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.6_cooling_disabled=false/daily_results.csv
+      hash: md5
+      md5: 9a472d6f2c29d3feda80644897f0b135
+      size: 984022
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.6_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 9d25ee8e2db06508572e39601910cf15
+      size: 496558958
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.6_cooling_disabled=false/results.csv
+      hash: md5
+      md5: eb33b2a14014e9de73db684f2b2f18c7
+      size: 720004
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.6_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 79b8c7220bfb702c4923707819f07cb6
+      size: 249
+  simulate@Brisbane-0.2-0.8-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Brisbane_min_soc=0.2_max_soc=0.8.csv --output 
+      results/simulation/Brisbane_min_soc=0.2_max_soc=0.8_cooling_disabled=true
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.2_max_soc=0.8.csv
+      hash: md5
+      md5: 7f3979d357b0e951a9fdc299165bfb6e
+      size: 11352300
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.8_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: a375a08da21a17a8c3d5bc926ef1d3fa
+      size: 525701
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.8_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: acbbd970b12c4051be3368a8c48705d3
+      size: 279333095
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.8_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 607365ed52adcf24f0c107494ea2983a
+      size: 547233
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.8_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 8e39da77bdd376dc7005c2d1f2dcda5b
+      size: 245
+  simulate@Brisbane-0.2-0.8-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Brisbane_min_soc=0.2_max_soc=0.8.csv --output 
+      results/simulation/Brisbane_min_soc=0.2_max_soc=0.8_cooling_disabled=false
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.2_max_soc=0.8.csv
+      hash: md5
+      md5: 7f3979d357b0e951a9fdc299165bfb6e
+      size: 11352300
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.8_cooling_disabled=false/daily_results.csv
+      hash: md5
+      md5: cf651739f7459e51abff5763dc3504aa
+      size: 563069
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.8_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 8f6cb538c16e4f8c14ea29e0df650200
+      size: 284655998
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.8_cooling_disabled=false/results.csv
+      hash: md5
+      md5: e69a45807afaf6ba5570265c801e4b74
+      size: 602307
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.8_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: b80da252e023f9caaedfbcde18ad0fc6
+      size: 245
+  simulate@Brisbane-0.2-0.9-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Brisbane_min_soc=0.2_max_soc=0.9.csv --output 
+      results/simulation/Brisbane_min_soc=0.2_max_soc=0.9_cooling_disabled=true
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.2_max_soc=0.9.csv
+      hash: md5
+      md5: a13661f05efaddc9c5588e0ccb8e8cca
+      size: 11185385
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.9_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: 44b50da33a316410751b0966cfb05e3d
+      size: 412765
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.9_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 08df49424bdf5992e874296202ac582f
+      size: 217763729
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.9_cooling_disabled=true/results.csv
+      hash: md5
+      md5: b64734c38989fcb541e6d9fed9ee09e2
+      size: 509047
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.9_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: a84d963de2f4dace1d163fee692a7702
+      size: 245
+  simulate@Brisbane-0.2-0.9-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Brisbane_min_soc=0.2_max_soc=0.9.csv --output 
+      results/simulation/Brisbane_min_soc=0.2_max_soc=0.9_cooling_disabled=false
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.2_max_soc=0.9.csv
+      hash: md5
+      md5: a13661f05efaddc9c5588e0ccb8e8cca
+      size: 11185385
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.9_cooling_disabled=false/daily_results.csv
+      hash: md5
+      md5: 54329b93459447ddda82e14d29857c3f
+      size: 450005
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.9_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: beb312a3936ae8661ed05c9a7ddd6c8e
+      size: 225921255
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.9_cooling_disabled=false/results.csv
+      hash: md5
+      md5: e89b99d69d49429f4d8a123956c619c7
+      size: 562622
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=0.9_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 8f237c35a894961da1d0398968e558ac
+      size: 246
+  simulate@Brisbane-0.2-1-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Brisbane_min_soc=0.2_max_soc=1.csv --output 
+      results/simulation/Brisbane_min_soc=0.2_max_soc=1_cooling_disabled=true
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.2_max_soc=1.csv
+      hash: md5
+      md5: eaecd65877a26a227e1ff5a39d22fd7b
+      size: 11035304
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=1_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: 0e42f6036256c2fb76e3eae70280a79d
+      size: 374824
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=1_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 82e855e343cf265270d70881c1c2a5f1
+      size: 196945608
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=1_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 40a607ecee2ea6ae1122c3ac366d72a9
+      size: 469089
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=1_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: b0ce1d96480bb78b26407e63638d949a
+      size: 247
+  simulate@Brisbane-0.2-1-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Brisbane_min_soc=0.2_max_soc=1.csv --output 
+      results/simulation/Brisbane_min_soc=0.2_max_soc=1_cooling_disabled=false
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.2_max_soc=1.csv
+      hash: md5
+      md5: eaecd65877a26a227e1ff5a39d22fd7b
+      size: 11035304
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=1_cooling_disabled=false/daily_results.csv
+      hash: md5
+      md5: 5208cf0c2405e053c50e72d2b7d31c24
+      size: 412231
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=1_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 3faab4d862de9f2aeb09dd1616834241
+      size: 205998797
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=1_cooling_disabled=false/results.csv
+      hash: md5
+      md5: 0739cbbbbbc1fb287e5268627d910eae
+      size: 519303
+    - path: 
+        results/simulation/Brisbane_min_soc=0.2_max_soc=1_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 9e4169032efafc7fb2be05468d1937fa
+      size: 246
+  simulate@Brisbane-0.4-0.6-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Brisbane_min_soc=0.4_max_soc=0.6.csv --output 
+      results/simulation/Brisbane_min_soc=0.4_max_soc=0.6_cooling_disabled=true
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.4_max_soc=0.6.csv
+      hash: md5
+      md5: 92828e75359eaa5bbd72992ba070b816
+      size: 11503857
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.6_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: 55effc4f328a7d329c574c3e940595c4
+      size: 1938566
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.6_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: ebaf7d49574ca9979b58ee4e99b9ffe1
+      size: 1030990341
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.6_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 7e9ca81af7ef21655d734f1a7923859c
+      size: 1118307
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.6_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 6a28168256c6cbb0ce212eb643f8ef39
+      size: 249
+  simulate@Brisbane-0.4-0.6-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Brisbane_min_soc=0.4_max_soc=0.6.csv --output 
+      results/simulation/Brisbane_min_soc=0.4_max_soc=0.6_cooling_disabled=false
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.4_max_soc=0.6.csv
+      hash: md5
+      md5: 92828e75359eaa5bbd72992ba070b816
+      size: 11503857
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.6_cooling_disabled=false/daily_results.csv
+      hash: md5
+      md5: 4fcd5af6f2bd449c84a375d521bbc1a5
+      size: 1976458
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.6_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: d173f5db0273a85da6fb9918e2d9954d
+      size: 1000500603
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.6_cooling_disabled=false/results.csv
+      hash: md5
+      md5: bba7bb5b49a808e6faaa00fdaef4fc78
+      size: 1149469
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.6_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 6b7af76b901a999694672d0f967bdcd9
+      size: 249
+  simulate@Brisbane-0.4-0.8-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Brisbane_min_soc=0.4_max_soc=0.8.csv --output 
+      results/simulation/Brisbane_min_soc=0.4_max_soc=0.8_cooling_disabled=true
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.4_max_soc=0.8.csv
+      hash: md5
+      md5: a362b51923340757b922727d4b29efe6
+      size: 11476153
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.8_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: dfcb7f9b1b7a9d73abe913e55a1509a9
+      size: 870561
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.8_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 7f18d1fa2a01dfe69028c1b322916b7a
+      size: 462441866
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.8_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 5c1bfde586317763207d7aea310937fa
+      size: 626838
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.8_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: ff4ab1e45380f3a3f03d718588c79980
+      size: 248
+  simulate@Brisbane-0.4-0.8-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Brisbane_min_soc=0.4_max_soc=0.8.csv --output 
+      results/simulation/Brisbane_min_soc=0.4_max_soc=0.8_cooling_disabled=false
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.4_max_soc=0.8.csv
+      hash: md5
+      md5: a362b51923340757b922727d4b29efe6
+      size: 11476153
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.8_cooling_disabled=false/daily_results.csv
+      hash: md5
+      md5: 4fad2cc374ff81567289a373b4784a4f
+      size: 908202
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.8_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 6a0ad4a9e19816461ba7868c41c2b7b5
+      size: 459063102
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.8_cooling_disabled=false/results.csv
+      hash: md5
+      md5: 688565ef4580592341784afde1a849ed
+      size: 669012
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.8_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: d4dc5ef14c71ddea3c44e413a47168e2
+      size: 248
+  simulate@Brisbane-0.4-0.9-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Brisbane_min_soc=0.4_max_soc=0.9.csv --output 
+      results/simulation/Brisbane_min_soc=0.4_max_soc=0.9_cooling_disabled=true
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.4_max_soc=0.9.csv
+      hash: md5
+      md5: fa7a49241e8966db733fbf4ce1c7c3f8
+      size: 11468659
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.9_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: 04804289ea8a817d2e3933b061770362
+      size: 640411
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.9_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: b1919f2d1cc804a2eeb3e07e2b4f874f
+      size: 341159543
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.9_cooling_disabled=true/results.csv
+      hash: md5
+      md5: e7de1fcc2c3e85cec89752134761689a
+      size: 570773
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.9_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 3f47db2746af6e0d0e9c909db37fc2f0
+      size: 247
+  simulate@Brisbane-0.4-0.9-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Brisbane_min_soc=0.4_max_soc=0.9.csv --output 
+      results/simulation/Brisbane_min_soc=0.4_max_soc=0.9_cooling_disabled=false
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.4_max_soc=0.9.csv
+      hash: md5
+      md5: fa7a49241e8966db733fbf4ce1c7c3f8
+      size: 11468659
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.9_cooling_disabled=false/daily_results.csv
+      hash: md5
+      md5: 4cdd440f3aa2981b49f65cadef7c04fe
+      size: 715508
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.9_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: c2dd1651fb9391097f7035e408e6692c
+      size: 362824423
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.9_cooling_disabled=false/results.csv
+      hash: md5
+      md5: db508d76141cb0e2079259a55620e191
+      size: 614890
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=0.9_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 1f505ab0eb233258c5064b2e6d507a82
+      size: 247
+  simulate@Brisbane-0.4-1-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Brisbane_min_soc=0.4_max_soc=1.csv --output 
+      results/simulation/Brisbane_min_soc=0.4_max_soc=1_cooling_disabled=true
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.4_max_soc=1.csv
+      hash: md5
+      md5: 25c8a9c740421423c12ec5edad817de6
+      size: 11348684
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=1_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: 5f09dcb472e9aec30851d6f19edb2c02
+      size: 488326
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=1_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 673c60cd14fdf5076a6679ff8d10d8d4
+      size: 259385093
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=1_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 72b2ccf9169d1357af5c5139a0b57db4
+      size: 527030
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=1_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 9cfea0a3d44e934d83f943086d71c386
+      size: 244
+  simulate@Brisbane-0.4-1-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Brisbane_min_soc=0.4_max_soc=1.csv --output 
+      results/simulation/Brisbane_min_soc=0.4_max_soc=1_cooling_disabled=false
+    deps:
+    - path: results/schedule/Brisbane_min_soc=0.4_max_soc=1.csv
+      hash: md5
+      md5: 25c8a9c740421423c12ec5edad817de6
+      size: 11348684
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=1_cooling_disabled=false/daily_results.csv
+      hash: md5
+      md5: 57770e983907f8a9047bf455383b0fa6
+      size: 562894
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=1_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: bb70eb72d6d2b057ea62ffe183fe1a6f
+      size: 284710345
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=1_cooling_disabled=false/results.csv
+      hash: md5
+      md5: f0ee188d5d940e30a5d1b6616c040cde
+      size: 571778
+    - path: 
+        results/simulation/Brisbane_min_soc=0.4_max_soc=1_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: ea41ec90216f47e45aaad69f5fa66b13
+      size: 244
+  simulate@Mt_Isa-0-0.6-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Mt_Isa_min_soc=0_max_soc=0.6.csv --output 
+      results/simulation/Mt_Isa_min_soc=0_max_soc=0.6_cooling_disabled=true
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0_max_soc=0.6.csv
+      hash: md5
+      md5: 971e3954a4e290b52861292bb5b9f985
+      size: 11391059
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.6_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: e3a55b5cee89c47722b09a5845cafd8f
+      size: 600597
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.6_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 39272d7dd1012f19e366b0b6c43ef318
+      size: 319276639
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.6_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 93456083982d9d93f59cc867d72bcf10
+      size: 612491
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.6_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: e2d336b08a29332b486110f884bb502d
+      size: 247
+  simulate@Mt_Isa-0-0.6-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Mt_Isa_min_soc=0_max_soc=0.6.csv --output 
+      results/simulation/Mt_Isa_min_soc=0_max_soc=0.6_cooling_disabled=false
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0_max_soc=0.6.csv
+      hash: md5
+      md5: 37f463e93eaf00980b9024af3c53f3c1
+      size: 10870913
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.6_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 9d7d9d6130bed255422e2c772c456c93
+      size: 172864144
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.6_cooling_disabled=false/results.csv
+      hash: md5
+      md5: f3e012ef69af607b116f3bb4980082ba
+      size: 476502
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.6_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 82246b1d3d65b9e75ab08c6a73524bb0
+      size: 1071329
+  simulate@Mt_Isa-0-0.8-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Mt_Isa_min_soc=0_max_soc=0.8.csv --output 
+      results/simulation/Mt_Isa_min_soc=0_max_soc=0.8_cooling_disabled=true
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0_max_soc=0.8.csv
+      hash: md5
+      md5: 00631be3a9ab79dcb411c89011b8a862
+      size: 11079304
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.8_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: dfeee80666e509993930490d5b9c8e7a
+      size: 412538
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.8_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 8dbf093c11b818534d78cda7c3dc5651
+      size: 217188271
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.8_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 7a6d522a8b9d6e0d4395662d04b03ad1
+      size: 519385
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.8_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: d754dd7cf8ede2650364d9fce11bb9f6
+      size: 247
+  simulate@Mt_Isa-0-0.8-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Mt_Isa_min_soc=0_max_soc=0.8.csv --output 
+      results/simulation/Mt_Isa_min_soc=0_max_soc=0.8_cooling_disabled=false
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0_max_soc=0.8.csv
+      hash: md5
+      md5: 37f463e93eaf00980b9024af3c53f3c1
+      size: 10870913
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.8_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 9d7d9d6130bed255422e2c772c456c93
+      size: 172864144
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.8_cooling_disabled=false/results.csv
+      hash: md5
+      md5: f3e012ef69af607b116f3bb4980082ba
+      size: 476502
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.8_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 82246b1d3d65b9e75ab08c6a73524bb0
+      size: 1071329
+  simulate@Mt_Isa-0-0.9-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Mt_Isa_min_soc=0_max_soc=0.9.csv --output 
+      results/simulation/Mt_Isa_min_soc=0_max_soc=0.9_cooling_disabled=true
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0_max_soc=0.9.csv
+      hash: md5
+      md5: a9627c18e5b9f3604ed50e58180f4e42
+      size: 10901144
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.9_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: ec535f3ebc5aca740e4cd602574fe84e
+      size: 337267
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.9_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 175c8339a7a594c0ee16193be505f94d
+      size: 176047737
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.9_cooling_disabled=true/results.csv
+      hash: md5
+      md5: c48e5340d69d14bdd1cff8331ccf5340
+      size: 488411
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.9_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 0b9be5e6de8a9456cfd88b90fe9c6a20
+      size: 248
+  simulate@Mt_Isa-0-0.9-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Mt_Isa_min_soc=0_max_soc=0.9.csv --output 
+      results/simulation/Mt_Isa_min_soc=0_max_soc=0.9_cooling_disabled=false
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0_max_soc=0.9.csv
+      hash: md5
+      md5: 37f463e93eaf00980b9024af3c53f3c1
+      size: 10870913
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.9_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 9d7d9d6130bed255422e2c772c456c93
+      size: 172864144
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.9_cooling_disabled=false/results.csv
+      hash: md5
+      md5: f3e012ef69af607b116f3bb4980082ba
+      size: 476502
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=0.9_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 82246b1d3d65b9e75ab08c6a73524bb0
+      size: 1071329
+  simulate@Mt_Isa-0-1-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Mt_Isa_min_soc=0_max_soc=1.csv --output 
+      results/simulation/Mt_Isa_min_soc=0_max_soc=1_cooling_disabled=true
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0_max_soc=1.csv
+      hash: md5
+      md5: 8504837ccb1247943bff042aca3c88bc
+      size: 10741049
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=1_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: 274266d14c1a515bb9426fccfb5a9580
+      size: 299707
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=1_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 0ddb2b67a8447f8ca20047e28b008806
+      size: 155901110
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=1_cooling_disabled=true/results.csv
+      hash: md5
+      md5: e35277ada238a4f91cd0864e1dec3714
+      size: 464037
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=1_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: eab8788f6aba67a0c115f6d5d2dc3c61
+      size: 248
+  simulate@Mt_Isa-0-1-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Mt_Isa_min_soc=0_max_soc=1.csv --output 
+      results/simulation/Mt_Isa_min_soc=0_max_soc=1_cooling_disabled=false
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0_max_soc=1.csv
+      hash: md5
+      md5: 37f463e93eaf00980b9024af3c53f3c1
+      size: 10870913
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=1_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 9d7d9d6130bed255422e2c772c456c93
+      size: 172864144
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=1_cooling_disabled=false/results.csv
+      hash: md5
+      md5: f3e012ef69af607b116f3bb4980082ba
+      size: 476502
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0_max_soc=1_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 82246b1d3d65b9e75ab08c6a73524bb0
+      size: 1071329
+  simulate@Mt_Isa-0.1-0.6-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Mt_Isa_min_soc=0.1_max_soc=0.6.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.6_cooling_disabled=true
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.1_max_soc=0.6.csv
+      hash: md5
+      md5: 1d1cfebafb6d5e47af63676d4861808a
+      size: 11478805
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.6_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: 71ab64ab1eeefb57196e12391fa88f27
+      size: 715508
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.6_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: be0e87c51c2e1b834e0141f45746d176
+      size: 380913990
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.6_cooling_disabled=true/results.csv
+      hash: md5
+      md5: defcf77586b636f6a6042b1a2c09b9b8
+      size: 643411
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.6_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 7b2ed82a968c6a0845a4026d3b4be125
+      size: 249
+  simulate@Mt_Isa-0.1-0.6-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Mt_Isa_min_soc=0.1_max_soc=0.6.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.6_cooling_disabled=false
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.1_max_soc=0.6.csv
+      hash: md5
+      md5: 37f463e93eaf00980b9024af3c53f3c1
+      size: 10870913
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.6_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 9d7d9d6130bed255422e2c772c456c93
+      size: 172864144
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.6_cooling_disabled=false/results.csv
+      hash: md5
+      md5: f3e012ef69af607b116f3bb4980082ba
+      size: 476502
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.6_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 82246b1d3d65b9e75ab08c6a73524bb0
+      size: 1071329
+  simulate@Mt_Isa-0.1-0.8-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Mt_Isa_min_soc=0.1_max_soc=0.8.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.8_cooling_disabled=true
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.1_max_soc=0.8.csv
+      hash: md5
+      md5: f9b20bd75cc2b232bf2757015ec731ab
+      size: 11211399
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.8_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: a50345416fb0f74ef3f34c04241c5f50
+      size: 450225
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.8_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: b1fd64247595a8dcc5d612aef953ffe1
+      size: 238065833
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.8_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 3cd55845b108c483b98118f85d9db770
+      size: 547242
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.8_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: cbdefdd4d4e06e382e2d35ad1f578bf1
+      size: 245
+  simulate@Mt_Isa-0.1-0.8-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Mt_Isa_min_soc=0.1_max_soc=0.8.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.8_cooling_disabled=false
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.1_max_soc=0.8.csv
+      hash: md5
+      md5: 37f463e93eaf00980b9024af3c53f3c1
+      size: 10870913
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.8_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 9d7d9d6130bed255422e2c772c456c93
+      size: 172864144
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.8_cooling_disabled=false/results.csv
+      hash: md5
+      md5: f3e012ef69af607b116f3bb4980082ba
+      size: 476502
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.8_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 82246b1d3d65b9e75ab08c6a73524bb0
+      size: 1071329
+  simulate@Mt_Isa-0.1-0.9-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Mt_Isa_min_soc=0.1_max_soc=0.9.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.9_cooling_disabled=true
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.1_max_soc=0.9.csv
+      hash: md5
+      md5: 11c56b544c663aaf03ebb1c5530a456d
+      size: 11037581
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.9_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: 9ebfe9ff9b228b1679dedabfeec70b75
+      size: 374771
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.9_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: c21e659f8cd562e418590956e0c9058d
+      size: 196776519
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.9_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 3ff9fdb192e623783abf4bf103610567
+      size: 501429
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.9_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: c65c2eff59747fe010ab6da3bd80931c
+      size: 246
+  simulate@Mt_Isa-0.1-0.9-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Mt_Isa_min_soc=0.1_max_soc=0.9.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.9_cooling_disabled=false
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.1_max_soc=0.9.csv
+      hash: md5
+      md5: 37f463e93eaf00980b9024af3c53f3c1
+      size: 10870913
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.9_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 9d7d9d6130bed255422e2c772c456c93
+      size: 172864144
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.9_cooling_disabled=false/results.csv
+      hash: md5
+      md5: f3e012ef69af607b116f3bb4980082ba
+      size: 476502
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=0.9_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 82246b1d3d65b9e75ab08c6a73524bb0
+      size: 1071329
+  simulate@Mt_Isa-0.1-1-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Mt_Isa_min_soc=0.1_max_soc=1.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.1_max_soc=1_cooling_disabled=true
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.1_max_soc=1.csv
+      hash: md5
+      md5: 37f463e93eaf00980b9024af3c53f3c1
+      size: 10870913
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=1_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: b88a910e7ee6f30d4312aa0ef8c9f0c4
+      size: 337219
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=1_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 914126924f421e49dac1b1bb286dd61e
+      size: 176206353
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=1_cooling_disabled=true/results.csv
+      hash: md5
+      md5: f3e012ef69af607b116f3bb4980082ba
+      size: 476502
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=1_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 02e7b4516c6db5ae85baf6aec6020b89
+      size: 245
+  simulate@Mt_Isa-0.1-1-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Mt_Isa_min_soc=0.1_max_soc=1.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.1_max_soc=1_cooling_disabled=false
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.1_max_soc=1.csv
+      hash: md5
+      md5: 37f463e93eaf00980b9024af3c53f3c1
+      size: 10870913
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=1_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 9d7d9d6130bed255422e2c772c456c93
+      size: 172864144
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=1_cooling_disabled=false/results.csv
+      hash: md5
+      md5: f3e012ef69af607b116f3bb4980082ba
+      size: 476502
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.1_max_soc=1_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 82246b1d3d65b9e75ab08c6a73524bb0
+      size: 1071329
+  simulate@Mt_Isa-0.2-0.6-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Mt_Isa_min_soc=0.2_max_soc=0.6.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.6_cooling_disabled=true
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.2_max_soc=0.6.csv
+      hash: md5
+      md5: 938b411339a93201707c026f083186dd
+      size: 11470247
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.6_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: aa241f09f269ccdd6c94362288aa6891
+      size: 946027
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.6_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 4c01c34c206fa3e4017c49fbf32e0cfc
+      size: 501988330
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.6_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 35959089b1a5bf8151bdb6a4681e96f8
+      size: 676979
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.6_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: ad55cfb69a7c25e53389643f1cbcbabe
+      size: 250
+  simulate@Mt_Isa-0.2-0.6-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Mt_Isa_min_soc=0.2_max_soc=0.6.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.6_cooling_disabled=false
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.2_max_soc=0.6.csv
+      hash: md5
+      md5: 37f463e93eaf00980b9024af3c53f3c1
+      size: 10870913
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.6_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 9d7d9d6130bed255422e2c772c456c93
+      size: 172864144
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.6_cooling_disabled=false/results.csv
+      hash: md5
+      md5: f3e012ef69af607b116f3bb4980082ba
+      size: 476502
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.6_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 82246b1d3d65b9e75ab08c6a73524bb0
+      size: 1071329
+  simulate@Mt_Isa-0.2-0.8-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Mt_Isa_min_soc=0.2_max_soc=0.8.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.8_cooling_disabled=true
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.2_max_soc=0.8.csv
+      hash: md5
+      md5: 5c92097d0746643071621958e1bdac04
+      size: 11353073
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.8_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: e0b5dd8bd60a7224ab8bfb09934c7f96
+      size: 525642
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.8_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: c316dc3971ae5c70f7966a076ee3f8e4
+      size: 279402095
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.8_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 2b5560107111af3e45bed0bf9c2cf99e
+      size: 567826
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.8_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 845b44a5825129f9883061dbf337de4d
+      size: 245
+  simulate@Mt_Isa-0.2-0.8-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Mt_Isa_min_soc=0.2_max_soc=0.8.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.8_cooling_disabled=false
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.2_max_soc=0.8.csv
+      hash: md5
+      md5: 37f463e93eaf00980b9024af3c53f3c1
+      size: 10870913
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.8_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 9d7d9d6130bed255422e2c772c456c93
+      size: 172864144
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.8_cooling_disabled=false/results.csv
+      hash: md5
+      md5: f3e012ef69af607b116f3bb4980082ba
+      size: 476502
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.8_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 82246b1d3d65b9e75ab08c6a73524bb0
+      size: 1071329
+  simulate@Mt_Isa-0.2-0.9-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Mt_Isa_min_soc=0.2_max_soc=0.9.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.9_cooling_disabled=true
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.2_max_soc=0.9.csv
+      hash: md5
+      md5: 1d00eab0ebcd6339e68946b469c8b5b4
+      size: 11186158
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.9_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: 81ccd995adcd271851f71db4bf3be5d8
+      size: 450169
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.9_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 38033b3386ec9af3ee542b6de59be72a
+      size: 237752502
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.9_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 487773cc7a5276d28f8b0fb1d5156467
+      size: 530914
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.9_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 8cd27ee2886b0d78e162dd9a44aeb6c3
+      size: 246
+  simulate@Mt_Isa-0.2-0.9-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Mt_Isa_min_soc=0.2_max_soc=0.9.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.9_cooling_disabled=false
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.2_max_soc=0.9.csv
+      hash: md5
+      md5: 37f463e93eaf00980b9024af3c53f3c1
+      size: 10870913
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.9_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 9d7d9d6130bed255422e2c772c456c93
+      size: 172864144
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.9_cooling_disabled=false/results.csv
+      hash: md5
+      md5: f3e012ef69af607b116f3bb4980082ba
+      size: 476502
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=0.9_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 82246b1d3d65b9e75ab08c6a73524bb0
+      size: 1071329
+  simulate@Mt_Isa-0.2-1-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Mt_Isa_min_soc=0.2_max_soc=1.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.2_max_soc=1_cooling_disabled=true
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.2_max_soc=1.csv
+      hash: md5
+      md5: c96dd2b6aaff0e5e2ccc83d022fb9aa6
+      size: 11036077
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=1_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: 2ebb6dc51ff7dc333b9cf3e17a8660d3
+      size: 374883
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=1_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 7318a05c49246f6d5b0e2b4d0079f85b
+      size: 196998152
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=1_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 93cb718435418cc8a022af54d8d08c2d
+      size: 489228
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=1_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 2b86b5083acfa17301ddd62e144f3d90
+      size: 246
+  simulate@Mt_Isa-0.2-1-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Mt_Isa_min_soc=0.2_max_soc=1.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.2_max_soc=1_cooling_disabled=false
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.2_max_soc=1.csv
+      hash: md5
+      md5: 37f463e93eaf00980b9024af3c53f3c1
+      size: 10870913
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=1_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 9d7d9d6130bed255422e2c772c456c93
+      size: 172864144
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=1_cooling_disabled=false/results.csv
+      hash: md5
+      md5: f3e012ef69af607b116f3bb4980082ba
+      size: 476502
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.2_max_soc=1_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 82246b1d3d65b9e75ab08c6a73524bb0
+      size: 1071329
+  simulate@Mt_Isa-0.4-0.6-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Mt_Isa_min_soc=0.4_max_soc=0.6.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.6_cooling_disabled=true
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.4_max_soc=0.6.csv
+      hash: md5
+      md5: 374699967ec9b2e1998d95a307fbec74
+      size: 11504630
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.6_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: f51a58a71461dacb61db2d06fb08ce67
+      size: 1824533
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.6_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: bc8a3ad9a06c64d6d1ae1065394aa2d5
+      size: 970393417
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.6_cooling_disabled=true/results.csv
+      hash: md5
+      md5: dacff8d1dce3a96845c1d0f20ef15e49
+      size: 1057724
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.6_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: a674e472da9f046ab04b3fbb36005f9e
+      size: 249
+  simulate@Mt_Isa-0.4-0.6-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Mt_Isa_min_soc=0.4_max_soc=0.6.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.6_cooling_disabled=false
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.4_max_soc=0.6.csv
+      hash: md5
+      md5: 37f463e93eaf00980b9024af3c53f3c1
+      size: 10870913
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.6_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 9d7d9d6130bed255422e2c772c456c93
+      size: 172864144
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.6_cooling_disabled=false/results.csv
+      hash: md5
+      md5: f3e012ef69af607b116f3bb4980082ba
+      size: 476502
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.6_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 82246b1d3d65b9e75ab08c6a73524bb0
+      size: 1071329
+  simulate@Mt_Isa-0.4-0.8-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Mt_Isa_min_soc=0.4_max_soc=0.8.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.8_cooling_disabled=true
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.4_max_soc=0.8.csv
+      hash: md5
+      md5: ca0a7a5e8cb6aab45cb21100cd079406
+      size: 11476926
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.8_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: b68541164326d24909f607318a8ceb77
+      size: 870620
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.8_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 67592314a1b9742458752be43c98daad
+      size: 462593182
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.8_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 960bfa241651fb56a7de851f69e41af2
+      size: 624361
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.8_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: d433b1c8d68bf5724ff0dd115d2a3fc9
+      size: 247
+  simulate@Mt_Isa-0.4-0.8-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Mt_Isa_min_soc=0.4_max_soc=0.8.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.8_cooling_disabled=false
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.4_max_soc=0.8.csv
+      hash: md5
+      md5: 37f463e93eaf00980b9024af3c53f3c1
+      size: 10870913
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.8_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 9d7d9d6130bed255422e2c772c456c93
+      size: 172864144
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.8_cooling_disabled=false/results.csv
+      hash: md5
+      md5: f3e012ef69af607b116f3bb4980082ba
+      size: 476502
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.8_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 82246b1d3d65b9e75ab08c6a73524bb0
+      size: 1071329
+  simulate@Mt_Isa-0.4-0.9-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Mt_Isa_min_soc=0.4_max_soc=0.9.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.9_cooling_disabled=true
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.4_max_soc=0.9.csv
+      hash: md5
+      md5: c31b6158dca0f2a084b05f7daa88f45b
+      size: 11469432
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.9_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: fc1845b27505d64111dec876a5a859cc
+      size: 640382
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.9_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: 0c614dc6cd43e7038baec5ade60273a9
+      size: 341260759
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.9_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 8e0437fa286dfdd0b7fb6761b9036a77
+      size: 574638
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.9_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 1fdcb49b3300409772d8257a94008699
+      size: 247
+  simulate@Mt_Isa-0.4-0.9-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Mt_Isa_min_soc=0.4_max_soc=0.9.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.9_cooling_disabled=false
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.4_max_soc=0.9.csv
+      hash: md5
+      md5: 37f463e93eaf00980b9024af3c53f3c1
+      size: 10870913
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.9_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 9d7d9d6130bed255422e2c772c456c93
+      size: 172864144
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.9_cooling_disabled=false/results.csv
+      hash: md5
+      md5: f3e012ef69af607b116f3bb4980082ba
+      size: 476502
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=0.9_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 82246b1d3d65b9e75ab08c6a73524bb0
+      size: 1071329
+  simulate@Mt_Isa-0.4-1-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Mt_Isa_min_soc=0.4_max_soc=1.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.4_max_soc=1_cooling_disabled=true
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.4_max_soc=1.csv
+      hash: md5
+      md5: 0f9d1dd6f354ec4aa66a4c8c13f02136
+      size: 11349457
+    - path: stages/simulate.py
+      hash: md5
+      md5: b36be3083bab82e4a1af32299ef6bd39
+      size: 6010
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=1_cooling_disabled=true/daily_results.csv
+      hash: md5
+      md5: 698190dcd41e15680a098ff63b634976
+      size: 525777
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=1_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: a37b1ed1290b1462816401da5c99a460
+      size: 279530706
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=1_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 6237ca4a26a15266388d3d1ee189c778
+      size: 535673
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=1_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 41dd69a9ad2850aada667fb5519075dd
+      size: 243
+  simulate@Mt_Isa-0.4-1-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Mt_Isa_min_soc=0.4_max_soc=1.csv --output 
+      results/simulation/Mt_Isa_min_soc=0.4_max_soc=1_cooling_disabled=false
+    deps:
+    - path: results/schedule/Mt_Isa_min_soc=0.4_max_soc=1.csv
+      hash: md5
+      md5: 37f463e93eaf00980b9024af3c53f3c1
+      size: 10870913
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=1_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 9d7d9d6130bed255422e2c772c456c93
+      size: 172864144
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=1_cooling_disabled=false/results.csv
+      hash: md5
+      md5: f3e012ef69af607b116f3bb4980082ba
+      size: 476502
+    - path: 
+        results/simulation/Mt_Isa_min_soc=0.4_max_soc=1_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: 82246b1d3d65b9e75ab08c6a73524bb0
+      size: 1071329
+  simulate@Cairns-0-0.6-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Cairns_min_soc=0_max_soc=0.6.csv --output 
+      results/simulation/Cairns_min_soc=0_max_soc=0.6_cooling_disabled=true
+    deps:
+    - path: results/schedule/Cairns_min_soc=0_max_soc=0.6.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=0.6_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: f2a53accbe9d692ebd1cbb8d5239800f
+      size: 182359146
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=0.6_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 8df92a4a303d8f024b9ebc71fa7d86ba
+      size: 505170
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=0.6_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 55f56177e5806a023a68a1c62b101391
+      size: 1152511
+  simulate@Cairns-0-0.6-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Cairns_min_soc=0_max_soc=0.6.csv --output 
+      results/simulation/Cairns_min_soc=0_max_soc=0.6_cooling_disabled=false
+    deps:
+    - path: results/schedule/Cairns_min_soc=0_max_soc=0.6.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=0.6_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 533e4abef1f6593bab06e12b7348c807
+      size: 192090874
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=0.6_cooling_disabled=false/results.csv
+      hash: md5
+      md5: 34a480d6e61838924831db149f10bdb1
+      size: 521028
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=0.6_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: a2bb8865b8d6f196ce16ec01739c5129
+      size: 1188943
+  simulate@Cairns-0-0.8-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Cairns_min_soc=0_max_soc=0.8.csv --output 
+      results/simulation/Cairns_min_soc=0_max_soc=0.8_cooling_disabled=true
+    deps:
+    - path: results/schedule/Cairns_min_soc=0_max_soc=0.8.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=0.8_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: f2a53accbe9d692ebd1cbb8d5239800f
+      size: 182359146
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=0.8_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 8df92a4a303d8f024b9ebc71fa7d86ba
+      size: 505170
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=0.8_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 55f56177e5806a023a68a1c62b101391
+      size: 1152511
+  simulate@Cairns-0-0.8-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Cairns_min_soc=0_max_soc=0.8.csv --output 
+      results/simulation/Cairns_min_soc=0_max_soc=0.8_cooling_disabled=false
+    deps:
+    - path: results/schedule/Cairns_min_soc=0_max_soc=0.8.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=0.8_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 533e4abef1f6593bab06e12b7348c807
+      size: 192090874
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=0.8_cooling_disabled=false/results.csv
+      hash: md5
+      md5: 34a480d6e61838924831db149f10bdb1
+      size: 521028
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=0.8_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: a2bb8865b8d6f196ce16ec01739c5129
+      size: 1188943
+  simulate@Cairns-0-0.9-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Cairns_min_soc=0_max_soc=0.9.csv --output 
+      results/simulation/Cairns_min_soc=0_max_soc=0.9_cooling_disabled=true
+    deps:
+    - path: results/schedule/Cairns_min_soc=0_max_soc=0.9.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=0.9_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: f2a53accbe9d692ebd1cbb8d5239800f
+      size: 182359146
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=0.9_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 8df92a4a303d8f024b9ebc71fa7d86ba
+      size: 505170
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=0.9_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 55f56177e5806a023a68a1c62b101391
+      size: 1152511
+  simulate@Cairns-0-0.9-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Cairns_min_soc=0_max_soc=0.9.csv --output 
+      results/simulation/Cairns_min_soc=0_max_soc=0.9_cooling_disabled=false
+    deps:
+    - path: results/schedule/Cairns_min_soc=0_max_soc=0.9.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=0.9_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 533e4abef1f6593bab06e12b7348c807
+      size: 192090874
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=0.9_cooling_disabled=false/results.csv
+      hash: md5
+      md5: 34a480d6e61838924831db149f10bdb1
+      size: 521028
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=0.9_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: a2bb8865b8d6f196ce16ec01739c5129
+      size: 1188943
+  simulate@Cairns-0-1-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Cairns_min_soc=0_max_soc=1.csv --output 
+      results/simulation/Cairns_min_soc=0_max_soc=1_cooling_disabled=true
+    deps:
+    - path: results/schedule/Cairns_min_soc=0_max_soc=1.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=1_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: f2a53accbe9d692ebd1cbb8d5239800f
+      size: 182359146
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=1_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 8df92a4a303d8f024b9ebc71fa7d86ba
+      size: 505170
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=1_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 55f56177e5806a023a68a1c62b101391
+      size: 1152511
+  simulate@Cairns-0-1-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Cairns_min_soc=0_max_soc=1.csv --output 
+      results/simulation/Cairns_min_soc=0_max_soc=1_cooling_disabled=false
+    deps:
+    - path: results/schedule/Cairns_min_soc=0_max_soc=1.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=1_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 533e4abef1f6593bab06e12b7348c807
+      size: 192090874
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=1_cooling_disabled=false/results.csv
+      hash: md5
+      md5: 34a480d6e61838924831db149f10bdb1
+      size: 521028
+    - path: 
+        results/simulation/Cairns_min_soc=0_max_soc=1_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: a2bb8865b8d6f196ce16ec01739c5129
+      size: 1188943
+  simulate@Cairns-0.1-0.6-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Cairns_min_soc=0.1_max_soc=0.6.csv --output 
+      results/simulation/Cairns_min_soc=0.1_max_soc=0.6_cooling_disabled=true
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.1_max_soc=0.6.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=0.6_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: f2a53accbe9d692ebd1cbb8d5239800f
+      size: 182359146
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=0.6_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 8df92a4a303d8f024b9ebc71fa7d86ba
+      size: 505170
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=0.6_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 55f56177e5806a023a68a1c62b101391
+      size: 1152511
+  simulate@Cairns-0.1-0.6-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Cairns_min_soc=0.1_max_soc=0.6.csv --output 
+      results/simulation/Cairns_min_soc=0.1_max_soc=0.6_cooling_disabled=false
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.1_max_soc=0.6.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=0.6_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 533e4abef1f6593bab06e12b7348c807
+      size: 192090874
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=0.6_cooling_disabled=false/results.csv
+      hash: md5
+      md5: 34a480d6e61838924831db149f10bdb1
+      size: 521028
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=0.6_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: a2bb8865b8d6f196ce16ec01739c5129
+      size: 1188943
+  simulate@Cairns-0.1-0.8-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Cairns_min_soc=0.1_max_soc=0.8.csv --output 
+      results/simulation/Cairns_min_soc=0.1_max_soc=0.8_cooling_disabled=true
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.1_max_soc=0.8.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=0.8_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: f2a53accbe9d692ebd1cbb8d5239800f
+      size: 182359146
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=0.8_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 8df92a4a303d8f024b9ebc71fa7d86ba
+      size: 505170
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=0.8_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 55f56177e5806a023a68a1c62b101391
+      size: 1152511
+  simulate@Cairns-0.1-0.8-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Cairns_min_soc=0.1_max_soc=0.8.csv --output 
+      results/simulation/Cairns_min_soc=0.1_max_soc=0.8_cooling_disabled=false
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.1_max_soc=0.8.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=0.8_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 533e4abef1f6593bab06e12b7348c807
+      size: 192090874
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=0.8_cooling_disabled=false/results.csv
+      hash: md5
+      md5: 34a480d6e61838924831db149f10bdb1
+      size: 521028
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=0.8_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: a2bb8865b8d6f196ce16ec01739c5129
+      size: 1188943
+  simulate@Cairns-0.1-0.9-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Cairns_min_soc=0.1_max_soc=0.9.csv --output 
+      results/simulation/Cairns_min_soc=0.1_max_soc=0.9_cooling_disabled=true
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.1_max_soc=0.9.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=0.9_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: f2a53accbe9d692ebd1cbb8d5239800f
+      size: 182359146
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=0.9_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 8df92a4a303d8f024b9ebc71fa7d86ba
+      size: 505170
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=0.9_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 55f56177e5806a023a68a1c62b101391
+      size: 1152511
+  simulate@Cairns-0.1-0.9-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Cairns_min_soc=0.1_max_soc=0.9.csv --output 
+      results/simulation/Cairns_min_soc=0.1_max_soc=0.9_cooling_disabled=false
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.1_max_soc=0.9.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=0.9_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 533e4abef1f6593bab06e12b7348c807
+      size: 192090874
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=0.9_cooling_disabled=false/results.csv
+      hash: md5
+      md5: 34a480d6e61838924831db149f10bdb1
+      size: 521028
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=0.9_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: a2bb8865b8d6f196ce16ec01739c5129
+      size: 1188943
+  simulate@Cairns-0.1-1-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Cairns_min_soc=0.1_max_soc=1.csv --output 
+      results/simulation/Cairns_min_soc=0.1_max_soc=1_cooling_disabled=true
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.1_max_soc=1.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=1_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: f2a53accbe9d692ebd1cbb8d5239800f
+      size: 182359146
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=1_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 8df92a4a303d8f024b9ebc71fa7d86ba
+      size: 505170
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=1_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 55f56177e5806a023a68a1c62b101391
+      size: 1152511
+  simulate@Cairns-0.1-1-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Cairns_min_soc=0.1_max_soc=1.csv --output 
+      results/simulation/Cairns_min_soc=0.1_max_soc=1_cooling_disabled=false
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.1_max_soc=1.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=1_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 533e4abef1f6593bab06e12b7348c807
+      size: 192090874
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=1_cooling_disabled=false/results.csv
+      hash: md5
+      md5: 34a480d6e61838924831db149f10bdb1
+      size: 521028
+    - path: 
+        results/simulation/Cairns_min_soc=0.1_max_soc=1_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: a2bb8865b8d6f196ce16ec01739c5129
+      size: 1188943
+  simulate@Cairns-0.2-0.6-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Cairns_min_soc=0.2_max_soc=0.6.csv --output 
+      results/simulation/Cairns_min_soc=0.2_max_soc=0.6_cooling_disabled=true
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.2_max_soc=0.6.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=0.6_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: f2a53accbe9d692ebd1cbb8d5239800f
+      size: 182359146
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=0.6_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 8df92a4a303d8f024b9ebc71fa7d86ba
+      size: 505170
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=0.6_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 55f56177e5806a023a68a1c62b101391
+      size: 1152511
+  simulate@Cairns-0.2-0.6-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Cairns_min_soc=0.2_max_soc=0.6.csv --output 
+      results/simulation/Cairns_min_soc=0.2_max_soc=0.6_cooling_disabled=false
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.2_max_soc=0.6.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=0.6_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 533e4abef1f6593bab06e12b7348c807
+      size: 192090874
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=0.6_cooling_disabled=false/results.csv
+      hash: md5
+      md5: 34a480d6e61838924831db149f10bdb1
+      size: 521028
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=0.6_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: a2bb8865b8d6f196ce16ec01739c5129
+      size: 1188943
+  simulate@Cairns-0.2-0.8-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Cairns_min_soc=0.2_max_soc=0.8.csv --output 
+      results/simulation/Cairns_min_soc=0.2_max_soc=0.8_cooling_disabled=true
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.2_max_soc=0.8.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=0.8_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: f2a53accbe9d692ebd1cbb8d5239800f
+      size: 182359146
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=0.8_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 8df92a4a303d8f024b9ebc71fa7d86ba
+      size: 505170
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=0.8_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 55f56177e5806a023a68a1c62b101391
+      size: 1152511
+  simulate@Cairns-0.2-0.8-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Cairns_min_soc=0.2_max_soc=0.8.csv --output 
+      results/simulation/Cairns_min_soc=0.2_max_soc=0.8_cooling_disabled=false
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.2_max_soc=0.8.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=0.8_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 533e4abef1f6593bab06e12b7348c807
+      size: 192090874
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=0.8_cooling_disabled=false/results.csv
+      hash: md5
+      md5: 34a480d6e61838924831db149f10bdb1
+      size: 521028
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=0.8_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: a2bb8865b8d6f196ce16ec01739c5129
+      size: 1188943
+  simulate@Cairns-0.2-0.9-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Cairns_min_soc=0.2_max_soc=0.9.csv --output 
+      results/simulation/Cairns_min_soc=0.2_max_soc=0.9_cooling_disabled=true
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.2_max_soc=0.9.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=0.9_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: f2a53accbe9d692ebd1cbb8d5239800f
+      size: 182359146
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=0.9_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 8df92a4a303d8f024b9ebc71fa7d86ba
+      size: 505170
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=0.9_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 55f56177e5806a023a68a1c62b101391
+      size: 1152511
+  simulate@Cairns-0.2-0.9-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Cairns_min_soc=0.2_max_soc=0.9.csv --output 
+      results/simulation/Cairns_min_soc=0.2_max_soc=0.9_cooling_disabled=false
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.2_max_soc=0.9.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=0.9_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 533e4abef1f6593bab06e12b7348c807
+      size: 192090874
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=0.9_cooling_disabled=false/results.csv
+      hash: md5
+      md5: 34a480d6e61838924831db149f10bdb1
+      size: 521028
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=0.9_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: a2bb8865b8d6f196ce16ec01739c5129
+      size: 1188943
+  simulate@Cairns-0.2-1-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Cairns_min_soc=0.2_max_soc=1.csv --output 
+      results/simulation/Cairns_min_soc=0.2_max_soc=1_cooling_disabled=true
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.2_max_soc=1.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=1_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: f2a53accbe9d692ebd1cbb8d5239800f
+      size: 182359146
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=1_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 8df92a4a303d8f024b9ebc71fa7d86ba
+      size: 505170
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=1_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 55f56177e5806a023a68a1c62b101391
+      size: 1152511
+  simulate@Cairns-0.2-1-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Cairns_min_soc=0.2_max_soc=1.csv --output 
+      results/simulation/Cairns_min_soc=0.2_max_soc=1_cooling_disabled=false
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.2_max_soc=1.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=1_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 533e4abef1f6593bab06e12b7348c807
+      size: 192090874
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=1_cooling_disabled=false/results.csv
+      hash: md5
+      md5: 34a480d6e61838924831db149f10bdb1
+      size: 521028
+    - path: 
+        results/simulation/Cairns_min_soc=0.2_max_soc=1_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: a2bb8865b8d6f196ce16ec01739c5129
+      size: 1188943
+  simulate@Cairns-0.4-0.6-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Cairns_min_soc=0.4_max_soc=0.6.csv --output 
+      results/simulation/Cairns_min_soc=0.4_max_soc=0.6_cooling_disabled=true
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.4_max_soc=0.6.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=0.6_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: f2a53accbe9d692ebd1cbb8d5239800f
+      size: 182359146
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=0.6_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 8df92a4a303d8f024b9ebc71fa7d86ba
+      size: 505170
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=0.6_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 55f56177e5806a023a68a1c62b101391
+      size: 1152511
+  simulate@Cairns-0.4-0.6-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Cairns_min_soc=0.4_max_soc=0.6.csv --output 
+      results/simulation/Cairns_min_soc=0.4_max_soc=0.6_cooling_disabled=false
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.4_max_soc=0.6.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=0.6_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 533e4abef1f6593bab06e12b7348c807
+      size: 192090874
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=0.6_cooling_disabled=false/results.csv
+      hash: md5
+      md5: 34a480d6e61838924831db149f10bdb1
+      size: 521028
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=0.6_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: a2bb8865b8d6f196ce16ec01739c5129
+      size: 1188943
+  simulate@Cairns-0.4-0.8-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Cairns_min_soc=0.4_max_soc=0.8.csv --output 
+      results/simulation/Cairns_min_soc=0.4_max_soc=0.8_cooling_disabled=true
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.4_max_soc=0.8.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=0.8_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: f2a53accbe9d692ebd1cbb8d5239800f
+      size: 182359146
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=0.8_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 8df92a4a303d8f024b9ebc71fa7d86ba
+      size: 505170
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=0.8_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 55f56177e5806a023a68a1c62b101391
+      size: 1152511
+  simulate@Cairns-0.4-0.8-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Cairns_min_soc=0.4_max_soc=0.8.csv --output 
+      results/simulation/Cairns_min_soc=0.4_max_soc=0.8_cooling_disabled=false
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.4_max_soc=0.8.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=0.8_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 533e4abef1f6593bab06e12b7348c807
+      size: 192090874
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=0.8_cooling_disabled=false/results.csv
+      hash: md5
+      md5: 34a480d6e61838924831db149f10bdb1
+      size: 521028
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=0.8_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: a2bb8865b8d6f196ce16ec01739c5129
+      size: 1188943
+  simulate@Cairns-0.4-0.9-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Cairns_min_soc=0.4_max_soc=0.9.csv --output 
+      results/simulation/Cairns_min_soc=0.4_max_soc=0.9_cooling_disabled=true
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.4_max_soc=0.9.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=0.9_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: f2a53accbe9d692ebd1cbb8d5239800f
+      size: 182359146
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=0.9_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 8df92a4a303d8f024b9ebc71fa7d86ba
+      size: 505170
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=0.9_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 55f56177e5806a023a68a1c62b101391
+      size: 1152511
+  simulate@Cairns-0.4-0.9-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Cairns_min_soc=0.4_max_soc=0.9.csv --output 
+      results/simulation/Cairns_min_soc=0.4_max_soc=0.9_cooling_disabled=false
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.4_max_soc=0.9.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=0.9_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 533e4abef1f6593bab06e12b7348c807
+      size: 192090874
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=0.9_cooling_disabled=false/results.csv
+      hash: md5
+      md5: 34a480d6e61838924831db149f10bdb1
+      size: 521028
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=0.9_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: a2bb8865b8d6f196ce16ec01739c5129
+      size: 1188943
+  simulate@Cairns-0.4-1-true:
+    cmd: python stages/simulate.py --disable-cooling true --schedule 
+      results/schedule/Cairns_min_soc=0.4_max_soc=1.csv --output 
+      results/simulation/Cairns_min_soc=0.4_max_soc=1_cooling_disabled=true
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.4_max_soc=1.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=1_cooling_disabled=true/degraded_schedule.csv
+      hash: md5
+      md5: f2a53accbe9d692ebd1cbb8d5239800f
+      size: 182359146
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=1_cooling_disabled=true/results.csv
+      hash: md5
+      md5: 8df92a4a303d8f024b9ebc71fa7d86ba
+      size: 505170
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=1_cooling_disabled=true/summary.csv
+      hash: md5
+      md5: 55f56177e5806a023a68a1c62b101391
+      size: 1152511
+  simulate@Cairns-0.4-1-false:
+    cmd: python stages/simulate.py --disable-cooling false --schedule 
+      results/schedule/Cairns_min_soc=0.4_max_soc=1.csv --output 
+      results/simulation/Cairns_min_soc=0.4_max_soc=1_cooling_disabled=false
+    deps:
+    - path: results/schedule/Cairns_min_soc=0.4_max_soc=1.csv
+      hash: md5
+      md5: 1ce0248b0a284d0a0f9580bdee826c52
+      size: 10874261
+    - path: stages/simulate.py
+      hash: md5
+      md5: 2786e5e1588a9dfb3f64ea9a9402cd55
+      size: 4931
+    outs:
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=1_cooling_disabled=false/degraded_schedule.csv
+      hash: md5
+      md5: 533e4abef1f6593bab06e12b7348c807
+      size: 192090874
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=1_cooling_disabled=false/results.csv
+      hash: md5
+      md5: 34a480d6e61838924831db149f10bdb1
+      size: 521028
+    - path: 
+        results/simulation/Cairns_min_soc=0.4_max_soc=1_cooling_disabled=false/summary.csv
+      hash: md5
+      md5: a2bb8865b8d6f196ce16ec01739c5129
+      size: 1188943
+  collate_results:
+    cmd: python stages/collate_results.py --input-dir results/simulation 
+      --output-dir results/collated
+    deps:
+    - path: results/simulation
+      hash: md5
+      md5: 2cf2538109e4c6fa37012378014fd977.dir
+      size: 15478595011
+      nfiles: 256
+    - path: stages/collate_results.py
+      hash: md5
+      md5: 5f4646d5a78272e1900b82d02c471198
+      size: 2846
+    outs:
+    - path: results/collated/daily_collated.csv
+      hash: md5
+      md5: c754afb0b7f70f1e1341cc56601d1b6f
+      size: 39965239
+    - path: results/collated/summary_collated.csv
+      hash: md5
+      md5: b875a153431cd53d5f5ebe61bda5d76b
+      size: 9062
+    - path: results/collated/yearly_collated.csv
+      hash: md5
+      md5: b5b8a0672c2b703d9223d38de220c9e8
+      size: 111338
+  collate_optimisations:
+    cmd: python stages/collate_optimisations.py --input-dir results/simulation 
+      --output-dir results/collated
+    deps:
+    - path: results/schedule
+      hash: md5
+      md5: 4f7573196c078ed93f17c82a7a59db88.dir
+      size: 538714688
+      nfiles: 49
+    - path: stages/collate_optimisations.py
+      hash: md5
+      md5: bf5bde2f269dd8d2cd66dc8214d6fda1
+      size: 2139
+    outs:
+    - path: results/collated/schedule_collated.csv
+      hash: md5
+      md5: bd2df385e1b2d8f1c0471083955066e7
+      size: 216818261

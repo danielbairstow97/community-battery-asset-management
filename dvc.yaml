@@ -6,7 +6,7 @@ stages:
     deps:
       - stages/get_tmy.py
     matrix:
-      location: [Brisbane]
+      location: [Brisbane, Mt_Isa, Cairns]
     outs:
       - data/tmy/${item.location}.csv
   get_dispatch_data:
@@ -16,4 +16,62 @@ stages:
       - stages/get_dispatch_data.py
     outs:
       - data/dispatch/dispatch.csv
+  optimise:
+    matrix:
+      location: [Brisbane, Mt_Isa, Cairns]
+      min_soc: [0, 0.1, 0.2, 0.4]
+      max_soc: [0.6, 0.8, 0.9, 1]
+    cmd: python stages/optimise.py
+      --tmy data/tmy/${item.location}.csv
+      --dispatch data/dispatch/dispatch.csv
+      --min-soc ${item.min_soc}
+      --max-soc ${item.max_soc}
+      --output results/schedule/${item.location}_min_soc=${item.min_soc}_max_soc=${item.max_soc}.csv
+    deps:
+      - stages/optimise.py
+      - data/dispatch/dispatch.csv
+      - data/tmy/${item.location}.csv
+    outs:
+      - results/schedule/${item.location}_min_soc=${item.min_soc}_max_soc=${item.max_soc}.csv
+  simulate:
+    matrix:
+      location: [Brisbane]
+      min_soc: [0, 0.1, 0.2, 0.4]
+      max_soc: [0.6, 0.8, 0.9, 1]
+      disable_cooling: [False]
+    cmd: python stages/simulate.py
+      --disable-cooling ${item.disable_cooling}
+      --schedule results/schedule/${item.location}_min_soc=${item.min_soc}_max_soc=${item.max_soc}.csv
+      --output results/simulation/${item.location}_min_soc=${item.min_soc}_max_soc=${item.max_soc}_cooling_disabled=${item.disable_cooling}
+    deps:
+      - stages/simulate.py
+      - results/schedule/${item.location}_min_soc=${item.min_soc}_max_soc=${item.max_soc}.csv
+    outs:
+      - results/simulation/${item.location}_min_soc=${item.min_soc}_max_soc=${item.max_soc}_cooling_disabled=${item.disable_cooling}/summary.csv
+      - results/simulation/${item.location}_min_soc=${item.min_soc}_max_soc=${item.max_soc}_cooling_disabled=${item.disable_cooling}/degraded_schedule.csv
+      - results/simulation/${item.location}_min_soc=${item.min_soc}_max_soc=${item.max_soc}_cooling_disabled=${item.disable_cooling}/results.csv
+      - results/simulation/${item.location}_min_soc=${item.min_soc}_max_soc=${item.max_soc}_cooling_disabled=${item.disable_cooling}/daily_results.csv
+  collate_results:
+    cmd: python stages/collate_results.py
+      --input-dir results/simulation
+      --output-dir results/collated
+    deps:
+      - stages/collate_results.py
+      - results/simulation
+    outs:
+      - results/collated/summary_collated.csv
+      - results/collated/daily_collated.csv
+      - results/collated/yearly_collated.csv
+  collate_optimisations:
+    cmd: python stages/collate_optimisations.py
+      --input-dir results/simulation
+      --output-dir results/collated
+    deps:
+      - stages/collate_optimisations.py
+      - results/schedule
+    outs:
+      - results/collated/schedule_collated.csv
+
+
+
 

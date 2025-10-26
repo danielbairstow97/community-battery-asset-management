@@ -1,2 +1,11 @@
 .dvc/** */
 data/**/*
+**/gurobi.lic
+results
+results/** */
+dash/** */
+dash
+cache
+cache/** */
+**__pycache__**
+test
